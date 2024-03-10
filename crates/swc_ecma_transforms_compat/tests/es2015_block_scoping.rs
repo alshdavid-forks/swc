@@ -4,7 +4,7 @@ use swc_common::{chain, comments::SingleThreadedComments, Mark, SyntaxContext};
 use swc_ecma_ast::{Ident, PropName, TsQualifiedName};
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::{
+use ad_swc_ecma_transforms_compat::{
     es2015,
     es2015::{block_scoping, for_of::for_of},
     es2017::async_to_generator,

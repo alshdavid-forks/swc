@@ -1,4 +1,4 @@
-use swc_graph_analyzer::{DepGraph, GraphAnalyzer};
+use ad_swc_graph_analyzer::{DepGraph, GraphAnalyzer};
 
 struct Deps<'a> {
     deps: &'a [(usize, Vec<usize>)],

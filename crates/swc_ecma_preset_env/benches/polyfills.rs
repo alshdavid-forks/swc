@@ -1,7 +1,7 @@
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{comments::SingleThreadedComments, FileName, Mark};
 use swc_ecma_parser::{Parser, StringInput, Syntax};
-use swc_ecma_preset_env::{preset_env, Config};
+use ad_swc_ecma_preset_env::{preset_env, Config};
 use swc_ecma_transforms::helpers::{Helpers, HELPERS};
 use swc_ecma_visit::FoldWith;
 

@@ -5,7 +5,7 @@ use std::{env, fs, path::Path, time::Instant};
 
 use swc_common::input::SourceFileInput;
 use swc_ecma_ast::*;
-use swc_ecma_codegen::{text_writer::JsWriter, Emitter};
+use ad_swc_ecma_codegen::{text_writer::JsWriter, Emitter};
 use swc_ecma_parser::{lexer::Lexer, Parser, Syntax};
 
 fn parse_and_gen(entry: &Path) {

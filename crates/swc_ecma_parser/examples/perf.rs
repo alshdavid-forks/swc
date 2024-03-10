@@ -4,7 +4,7 @@ use std::{collections::hash_map::DefaultHasher, hash::Hash};
 
 use criterion::black_box;
 use swc_common::{self, sync::Lrc, SourceMap};
-use swc_ecma_parser::{lexer::Lexer, Parser, StringInput, Syntax, TsConfig};
+use ad_swc_ecma_parser::{lexer::Lexer, Parser, StringInput, Syntax, TsConfig};
 
 fn main() {
     let mut cnt = 0;

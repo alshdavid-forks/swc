@@ -1,5 +1,5 @@
 use swc_ecma_parser::Syntax;
-use swc_ecma_transforms_compat::es2015::template_literal;
+use ad_swc_ecma_transforms_compat::es2015::template_literal;
 use swc_ecma_transforms_testing::{test, test_exec};
 use swc_ecma_visit::Fold;
 

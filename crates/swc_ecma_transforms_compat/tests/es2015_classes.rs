@@ -3,7 +3,7 @@ use std::{fs::read_to_string, path::PathBuf};
 use swc_common::{chain, Mark};
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::{
+use ad_swc_ecma_transforms_compat::{
     es2015,
     es2015::{arrow, block_scoping, classes, classes::Config, spread},
     es2016, es2017, es2018, es2022,

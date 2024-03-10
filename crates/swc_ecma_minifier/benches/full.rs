@@ -7,7 +7,7 @@ use std::fs::read_to_string;
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use swc_common::{errors::HANDLER, sync::Lrc, FileName, Mark, SourceMap};
 use swc_ecma_codegen::text_writer::JsWriter;
-use swc_ecma_minifier::{
+use ad_swc_ecma_minifier::{
     optimize,
     option::{ExtraOptions, MangleOptions, MinifyOptions},
 };

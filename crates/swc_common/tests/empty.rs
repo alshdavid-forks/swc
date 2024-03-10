@@ -1,4 +1,4 @@
-use swc_common::*;
+use ad_swc_common::*;
 
 pub struct Struct {}
 

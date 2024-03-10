@@ -7,17 +7,17 @@ use std::{
 
 use anyhow::{Context, Error};
 use once_cell::sync::Lazy;
-use swc::{
+use ad_swc::{
     config::{
         Config, JsMinifyOptions, JscConfig, ModuleConfig, Options, SourceMapsConfig,
         TransformConfig,
     },
     try_with_handler, BoolOrDataConfig, Compiler, HandlerOpts,
 };
-use swc_common::{errors::ColorConfig, SourceMap, GLOBALS};
-use swc_ecma_ast::EsVersion;
-use swc_ecma_parser::{Syntax, TsConfig};
-use swc_ecma_testing::{exec_node_js, JsExecOptions};
+use ad_swc_common::{errors::ColorConfig, SourceMap, GLOBALS};
+use ad_swc_ecma_ast::EsVersion;
+use ad_swc_ecma_parser::{Syntax, TsConfig};
+use ad_swc_ecma_testing::{exec_node_js, JsExecOptions};
 use testing::{assert_eq, find_executable, unignore_fixture};
 use tracing::{span, Level};
 
@@ -73,7 +73,7 @@ fn init_helpers() -> Arc<PathBuf> {
                 Command::new(&yarn)
             };
             cmd.current_dir(&helper_dir);
-            let status = cmd.status().expect("failed to update swc core");
+            let status = cmd.status().expect("failed to update ad_swc core");
             assert!(status.success());
         }
 

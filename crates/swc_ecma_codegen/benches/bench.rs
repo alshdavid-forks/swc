@@ -2,7 +2,7 @@ extern crate swc_malloc;
 
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::FileName;
-use swc_ecma_codegen::{self, Emitter};
+use ad_swc_ecma_codegen::{self, Emitter};
 use swc_ecma_parser::{Parser, StringInput, Syntax};
 
 const COLORS_JS: &str = r#"
@@ -101,7 +101,7 @@ fn bench_emitter(b: &mut Bencher, s: &str) {
                     cfg: Default::default(),
                     comments: None,
                     cm: cm.clone(),
-                    wr: swc_ecma_codegen::text_writer::JsWriter::new(
+                    wr: ad_swc_ecma_codegen::text_writer::JsWriter::new(
                         cm.clone(),
                         "\n",
                         &mut buf,

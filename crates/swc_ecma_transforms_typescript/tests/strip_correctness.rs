@@ -9,7 +9,7 @@ use swc_ecma_ast::*;
 use swc_ecma_codegen::{self, Emitter};
 use swc_ecma_parser::{lexer::Lexer, EsConfig, Parser, Syntax, TsConfig};
 use swc_ecma_transforms_base::{fixer::fixer, hygiene::hygiene, resolver};
-use swc_ecma_transforms_typescript::typescript;
+use ad_swc_ecma_transforms_typescript::typescript;
 use swc_ecma_visit::{Fold, FoldWith};
 
 #[testing::fixture("../swc_ecma_parser/tests/tsc/**/*.ts")]

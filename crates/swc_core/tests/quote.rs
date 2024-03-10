@@ -1,5 +1,5 @@
 #[cfg(feature = "quote")]
-use swc_core::{ast::Ident, common::DUMMY_SP, quote, quote_expr, utils::private_ident};
+use ad_swc_core::{ast::Ident, common::DUMMY_SP, quote, quote_expr, utils::private_ident};
 
 #[cfg(feature = "quote")]
 #[test]

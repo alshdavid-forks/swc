@@ -1,6 +1,6 @@
 use swc_common::{chain, DUMMY_SP};
 use swc_ecma_ast::{Module, Program};
-use swc_ecma_visit::{Visit, VisitWith};
+use ad_swc_ecma_visit::{Visit, VisitWith};
 
 #[test]
 fn should_visit_program() {

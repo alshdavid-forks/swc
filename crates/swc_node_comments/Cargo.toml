@@ -1,15 +1,14 @@
+
 [package]
-authors = [
-  "강동윤 <kdy1997.dev@gmail.com>",
-  "Daniel Woznicki <daniel.woznicki@gmail.com>",
-]
+authors = ["강동윤 <kdy1997.dev@gmail.com>","Daniel Woznicki <daniel.woznicki@gmail.com>"]
 description = "Implementation of Comments of swc_common"
 documentation = "https://rustdoc.swc.rs/swc_node_comments/"
 edition = "2021"
 license = "Apache-2.0"
-name = "swc_node_comments"
+name = "ad_swc_node_comments"
 repository = "https://github.com/swc-project/swc.git"
-version = "0.20.18"
+version = "1.0.0"
+_name = "swc_node_comments"
 
 [lib]
 bench = false
@@ -17,5 +16,12 @@ bench = false
 [dependencies]
 dashmap = "5.4.0"
 
-swc_atoms  = { version = "0.6.5", path = "../swc_atoms" }
-swc_common = { version = "0.33.19", path = "../swc_common" }
+[dependencies.swc_atoms]
+version = "1.0.0"
+path = "../swc_atoms"
+package = "ad_swc_atoms"
+
+[dependencies.swc_common]
+version = "1.0.0"
+path = "../swc_common"
+package = "ad_swc_common"

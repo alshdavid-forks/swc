@@ -1,52 +1,107 @@
-[package]
-authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
-description   = "Compatibility layer between estree and swc"
-documentation = "https://rustdoc.swc.rs/swc_estree_compat/"
-edition       = "2021"
-include       = ["Cargo.toml", "src/**/*.rs"]
-license       = "Apache-2.0"
-name          = "swc_estree_compat"
-repository    = "https://github.com/swc-project/swc.git"
-version       = "0.198.16"
 
-  [package.metadata.docs.rs]
-  all-features = true
+[package]
+authors = ["강동윤 <kdy1997.dev@gmail.com>"]
+description = "Compatibility layer between estree and swc"
+documentation = "https://rustdoc.swc.rs/swc_estree_compat/"
+edition = "2021"
+include = ["Cargo.toml","src/**/*.rs"]
+license = "Apache-2.0"
+name = "ad_swc_estree_compat"
+repository = "https://github.com/swc-project/swc.git"
+version = "1.0.0"
+_name = "swc_estree_compat"
+
+[package.metadata.docs.rs]
+all-features = true
 
 [lib]
 bench = false
 
 [dependencies]
-ahash      = { version = "0.8.8", features = ["compile-time-rng"] }
-anyhow     = "1"
-copyless   = "0.1.5"
-rayon      = "1.7.0"
-serde      = { version = "1", features = ["derive"] }
+anyhow = "1"
+copyless = "0.1.5"
+rayon = "1.7.0"
 serde_json = "1.0.62"
 
-swc_atoms = { version = "0.6.5", path = "../swc_atoms" }
-swc_common = { version = "0.33.19", path = "../swc_common", features = [
-  "concurrent",
-  "sourcemap",
-  "tty-emitter",
-] }
-swc_ecma_ast = { version = "0.112.5", path = "../swc_ecma_ast" }
-swc_ecma_parser = { version = "0.143.8", path = "../swc_ecma_parser" }
-swc_ecma_utils = { version = "0.127.10", path = "../swc_ecma_utils" }
-swc_ecma_visit = { version = "0.98.6", path = "../swc_ecma_visit" }
-swc_estree_ast = { version = "0.23.18", path = "../swc_estree_ast" }
-swc_node_comments = { version = "0.20.18", path = "../swc_node_comments/" }
+[dependencies.ahash]
+version = "0.8.8"
+features = ["compile-time-rng"]
+
+[dependencies.serde]
+version = "1"
+features = ["derive"]
+
+[dependencies.swc_atoms]
+version = "1.0.0"
+path = "../swc_atoms"
+package = "ad_swc_atoms"
+
+[dependencies.swc_common]
+version = "1.0.0"
+path = "../swc_common"
+features = ["concurrent","sourcemap","tty-emitter"]
+package = "ad_swc_common"
+
+[dependencies.swc_ecma_ast]
+version = "1.0.0"
+path = "../swc_ecma_ast"
+package = "ad_swc_ecma_ast"
+
+[dependencies.swc_ecma_parser]
+version = "1.0.0"
+path = "../swc_ecma_parser"
+package = "ad_swc_ecma_parser"
+
+[dependencies.swc_ecma_utils]
+version = "1.0.0"
+path = "../swc_ecma_utils"
+package = "ad_swc_ecma_utils"
+
+[dependencies.swc_ecma_visit]
+version = "1.0.0"
+path = "../swc_ecma_visit"
+package = "ad_swc_ecma_visit"
+
+[dependencies.swc_estree_ast]
+version = "1.0.0"
+path = "../swc_estree_ast"
+package = "ad_swc_estree_ast"
+
+[dependencies.swc_node_comments]
+version = "1.0.0"
+path = "../swc_node_comments/"
+package = "ad_swc_node_comments"
 
 [dev-dependencies]
-criterion         = "0.5"
+criterion = "0.5"
 pretty_assertions = "1.3"
+walkdir = "2"
 
-swc                 = { version = "0.273.17", path = "../swc" }
-swc_ecma_ast        = { version = "0.112.5", path = "../swc_ecma_ast" }
-swc_ecma_parser     = { version = "0.143.8", path = "../swc_ecma_parser" }
-swc_ecma_transforms = { version = "0.229.13", path = "../swc_ecma_transforms/" }
-testing             = { version = "0.35.20", path = "../testing" }
-walkdir             = "2"
+[dev-dependencies.swc]
+version = "1.0.0"
+path = "../swc"
+package = "ad_swc"
+
+[dev-dependencies.swc_ecma_ast]
+version = "1.0.0"
+path = "../swc_ecma_ast"
+package = "ad_swc_ecma_ast"
+
+[dev-dependencies.swc_ecma_parser]
+version = "1.0.0"
+path = "../swc_ecma_parser"
+package = "ad_swc_ecma_parser"
+
+[dev-dependencies.swc_ecma_transforms]
+version = "1.0.0"
+path = "../swc_ecma_transforms/"
+package = "ad_swc_ecma_transforms"
+
+[dev-dependencies.testing]
+version = "1.0.0"
+path = "../testing"
+package = "ad_testing"
 
 [[bench]]
 harness = false
-name    = "babelify"
+name = "babelify"

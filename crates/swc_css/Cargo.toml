@@ -1,33 +1,73 @@
-[package]
-authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
-description   = "CSS apis for rust"
-documentation = "https://rustdoc.swc.rs/swc_css/"
-edition       = "2021"
-license       = "Apache-2.0"
-name          = "swc_css"
-repository    = "https://github.com/swc-project/swc.git"
-version       = "0.157.38"
 
-  [package.metadata.docs.rs]
-  all-features = true
-  rustdoc-args = ["--cfg", "docsrs"]
+[package]
+authors = ["강동윤 <kdy1997.dev@gmail.com>"]
+description = "CSS apis for rust"
+documentation = "https://rustdoc.swc.rs/swc_css/"
+edition = "2021"
+license = "Apache-2.0"
+name = "ad_swc_css"
+repository = "https://github.com/swc-project/swc.git"
+version = "1.0.0"
+_name = "swc_css"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg","docsrs"]
 
 [lib]
 bench = false
 
 [features]
-compat   = ["swc_css_compat"]
+compat = ["swc_css_compat"]
 minifier = ["swc_css_minifier"]
-modules  = ["swc_css_modules"]
+modules = ["swc_css_modules"]
 prefixer = ["swc_css_prefixer"]
 
-[dependencies]
-swc_css_ast      = { version = "0.140.20", path = "../swc_css_ast" }
-swc_css_codegen  = { version = "0.151.30", path = "../swc_css_codegen" }
-swc_css_compat   = { version = "0.27.31", path = "../swc_css_compat", optional = true }
-swc_css_minifier = { version = "0.116.31", path = "../swc_css_minifier", optional = true }
-swc_css_modules  = { version = "0.29.33", path = "../swc_css_modules", optional = true }
-swc_css_parser   = { version = "0.150.29", path = "../swc_css_parser" }
-swc_css_prefixer = { version = "0.153.34", path = "../swc_css_prefixer", optional = true }
-swc_css_utils    = { version = "0.137.20", path = "../swc_css_utils/" }
-swc_css_visit    = { version = "0.139.20", path = "../swc_css_visit" }
+[dependencies.swc_css_ast]
+version = "1.0.0"
+path = "../swc_css_ast"
+package = "ad_swc_css_ast"
+
+[dependencies.swc_css_codegen]
+version = "1.0.0"
+path = "../swc_css_codegen"
+package = "ad_swc_css_codegen"
+
+[dependencies.swc_css_compat]
+version = "1.0.0"
+path = "../swc_css_compat"
+optional = true
+package = "ad_swc_css_compat"
+
+[dependencies.swc_css_minifier]
+version = "1.0.0"
+path = "../swc_css_minifier"
+optional = true
+package = "ad_swc_css_minifier"
+
+[dependencies.swc_css_modules]
+version = "1.0.0"
+path = "../swc_css_modules"
+optional = true
+package = "ad_swc_css_modules"
+
+[dependencies.swc_css_parser]
+version = "1.0.0"
+path = "../swc_css_parser"
+package = "ad_swc_css_parser"
+
+[dependencies.swc_css_prefixer]
+version = "1.0.0"
+path = "../swc_css_prefixer"
+optional = true
+package = "ad_swc_css_prefixer"
+
+[dependencies.swc_css_utils]
+version = "1.0.0"
+path = "../swc_css_utils/"
+package = "ad_swc_css_utils"
+
+[dependencies.swc_css_visit]
+version = "1.0.0"
+path = "../swc_css_visit"
+package = "ad_swc_css_visit"

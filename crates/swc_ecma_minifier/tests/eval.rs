@@ -4,7 +4,7 @@ use swc_atoms::Atom;
 use swc_common::{sync::Lrc, FileName, Mark, SourceMap};
 use swc_ecma_ast::*;
 use swc_ecma_codegen::{text_writer::JsWriter, Emitter};
-use swc_ecma_minifier::{
+use ad_swc_ecma_minifier::{
     eval::{EvalResult, Evaluator},
     marks::Marks,
 };

@@ -2,7 +2,7 @@
 
 use std::any::Any;
 
-use swc_visit::define;
+use ad_swc_visit::define;
 
 /// Visitable nodes.
 pub trait Node: Any {}

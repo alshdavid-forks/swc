@@ -24,7 +24,7 @@ use swc_ecma_codegen::{
     text_writer::{omit_trailing_semi, JsWriter, WriteJs},
     Emitter,
 };
-use swc_ecma_minifier::{
+use ad_swc_ecma_minifier::{
     optimize,
     option::{terser::TerserCompressorOptions, CompressOptions, ExtraOptions, MinifyOptions},
 };

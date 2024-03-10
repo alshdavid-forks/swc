@@ -8,7 +8,7 @@ use std::{
 
 use swc_common::{comments::SingleThreadedComments, FileName};
 use swc_ecma_ast::*;
-use swc_ecma_parser::{lexer::Lexer, EsConfig, PResult, Parser, Syntax};
+use ad_swc_ecma_parser::{lexer::Lexer, EsConfig, PResult, Parser, Syntax};
 use swc_ecma_visit::FoldWith;
 use testing::StdErr;
 

@@ -1,28 +1,26 @@
-[package]
-authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
-description   = "rust port of babel and closure compiler."
-documentation = "https://rustdoc.swc.rs/swc_ecma_transforms/"
-edition       = "2021"
-include       = ["Cargo.toml", "src/**/*.rs"]
-license       = "Apache-2.0"
-name          = "swc_ecma_transforms"
-repository    = "https://github.com/swc-project/swc.git"
-version       = "0.229.13"
 
-  [package.metadata.docs.rs]
-  all-features = true
-  rustdoc-args = ["--cfg", "docsrs"]
+[package]
+authors = ["강동윤 <kdy1997.dev@gmail.com>"]
+description = "rust port of babel and closure compiler."
+documentation = "https://rustdoc.swc.rs/swc_ecma_transforms/"
+edition = "2021"
+include = ["Cargo.toml","src/**/*.rs"]
+license = "Apache-2.0"
+name = "ad_swc_ecma_transforms"
+repository = "https://github.com/swc-project/swc.git"
+version = "1.0.0"
+_name = "swc_ecma_transforms"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg","docsrs"]
 
 [lib]
 bench = false
 
 [features]
 compat = ["swc_ecma_transforms_compat"]
-concurrent = [
-  "swc_ecma_transforms_compat/concurrent",
-  "swc_ecma_transforms_optimization/concurrent",
-  "swc_ecma_transforms_react/concurrent",
-]
+concurrent = ["swc_ecma_transforms_compat/concurrent","swc_ecma_transforms_optimization/concurrent","swc_ecma_transforms_react/concurrent"]
 module = ["swc_ecma_transforms_module"]
 multi-module-decorator = ["swc_ecma_transforms_proposal/multi-module"]
 optimization = ["swc_ecma_transforms_optimization"]
@@ -30,26 +28,93 @@ proposal = ["swc_ecma_transforms_proposal"]
 react = ["swc_ecma_transforms_react"]
 typescript = ["swc_ecma_transforms_typescript"]
 
-[dependencies]
-swc_atoms                        = { version = "0.6.5", path = "../swc_atoms" }
-swc_common                       = { version = "0.33.19", path = "../swc_common" }
-swc_ecma_ast                     = { version = "0.112.5", path = "../swc_ecma_ast" }
-swc_ecma_transforms_base         = { version = "0.137.13", path = "../swc_ecma_transforms_base" }
-swc_ecma_transforms_compat       = { version = "0.163.13", path = "../swc_ecma_transforms_compat", optional = true }
-swc_ecma_transforms_module       = { version = "0.180.13", path = "../swc_ecma_transforms_module", optional = true }
-swc_ecma_transforms_optimization = { version = "0.198.13", path = "../swc_ecma_transforms_optimization", optional = true }
-swc_ecma_transforms_proposal     = { version = "0.171.13", path = "../swc_ecma_transforms_proposal", optional = true }
-swc_ecma_transforms_react        = { version = "0.183.13", path = "../swc_ecma_transforms_react", optional = true }
-swc_ecma_transforms_typescript   = { version = "0.188.13", path = "../swc_ecma_transforms_typescript", optional = true }
-swc_ecma_utils                   = { version = "0.127.10", path = "../swc_ecma_utils" }
-swc_ecma_visit                   = { version = "0.98.6", path = "../swc_ecma_visit" }
+[dependencies.swc_atoms]
+version = "1.0.0"
+path = "../swc_atoms"
+package = "ad_swc_atoms"
+
+[dependencies.swc_common]
+version = "1.0.0"
+path = "../swc_common"
+package = "ad_swc_common"
+
+[dependencies.swc_ecma_ast]
+version = "1.0.0"
+path = "../swc_ecma_ast"
+package = "ad_swc_ecma_ast"
+
+[dependencies.swc_ecma_transforms_base]
+version = "1.0.0"
+path = "../swc_ecma_transforms_base"
+package = "ad_swc_ecma_transforms_base"
+
+[dependencies.swc_ecma_transforms_compat]
+version = "1.0.0"
+path = "../swc_ecma_transforms_compat"
+optional = true
+package = "ad_swc_ecma_transforms_compat"
+
+[dependencies.swc_ecma_transforms_module]
+version = "1.0.0"
+path = "../swc_ecma_transforms_module"
+optional = true
+package = "ad_swc_ecma_transforms_module"
+
+[dependencies.swc_ecma_transforms_optimization]
+version = "1.0.0"
+path = "../swc_ecma_transforms_optimization"
+optional = true
+package = "ad_swc_ecma_transforms_optimization"
+
+[dependencies.swc_ecma_transforms_proposal]
+version = "1.0.0"
+path = "../swc_ecma_transforms_proposal"
+optional = true
+package = "ad_swc_ecma_transforms_proposal"
+
+[dependencies.swc_ecma_transforms_react]
+version = "1.0.0"
+path = "../swc_ecma_transforms_react"
+optional = true
+package = "ad_swc_ecma_transforms_react"
+
+[dependencies.swc_ecma_transforms_typescript]
+version = "1.0.0"
+path = "../swc_ecma_transforms_typescript"
+optional = true
+package = "ad_swc_ecma_transforms_typescript"
+
+[dependencies.swc_ecma_utils]
+version = "1.0.0"
+path = "../swc_ecma_utils"
+package = "ad_swc_ecma_utils"
+
+[dependencies.swc_ecma_visit]
+version = "1.0.0"
+path = "../swc_ecma_visit"
+package = "ad_swc_ecma_visit"
 
 [dev-dependencies]
 pretty_assertions = "1.3"
-sourcemap         = "6.4"
-tempfile          = "3"
+sourcemap = "6.4"
+tempfile = "3"
 
-swc_ecma_codegen            = { version = "0.148.10", path = "../swc_ecma_codegen" }
-swc_ecma_parser             = { version = "0.143.8", path = "../swc_ecma_parser" }
-swc_ecma_transforms_testing = { version = "0.140.13", path = "../swc_ecma_transforms_testing" }
-testing                     = { version = "0.35.20", path = "../testing" }
+[dev-dependencies.swc_ecma_codegen]
+version = "1.0.0"
+path = "../swc_ecma_codegen"
+package = "ad_swc_ecma_codegen"
+
+[dev-dependencies.swc_ecma_parser]
+version = "1.0.0"
+path = "../swc_ecma_parser"
+package = "ad_swc_ecma_parser"
+
+[dev-dependencies.swc_ecma_transforms_testing]
+version = "1.0.0"
+path = "../swc_ecma_transforms_testing"
+package = "ad_swc_ecma_transforms_testing"
+
+[dev-dependencies.testing]
+version = "1.0.0"
+path = "../testing"
+package = "ad_testing"

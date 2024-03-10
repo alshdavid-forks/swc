@@ -1,18 +1,18 @@
 use std::sync::Arc;
 
 use anyhow::Context;
-use swc::{self, try_with_handler};
-use swc_common::{errors::ColorConfig, FileName, SourceMap, GLOBALS};
+use ad_swc::{self, try_with_handler};
+use ad_swc_common::{errors::ColorConfig, FileName, SourceMap, GLOBALS};
 
 fn main() {
     let cm = Arc::<SourceMap>::default();
 
-    let c = swc::Compiler::new(cm.clone());
+    let c = ad_swc::Compiler::new(cm.clone());
     let output = GLOBALS
         .set(&Default::default(), || {
             try_with_handler(
                 cm.clone(),
-                swc::HandlerOpts {
+                ad_swc::HandlerOpts {
                     // Auto is default, but for it's an example.
                     // You can use the env var named `NO_COLOR` to control this.
                     color: ColorConfig::Auto,

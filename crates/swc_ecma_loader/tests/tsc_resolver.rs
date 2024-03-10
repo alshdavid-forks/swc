@@ -4,7 +4,7 @@ use std::collections::HashMap;
 
 use anyhow::{anyhow, Error};
 use swc_common::{collections::AHashMap, FileName};
-use swc_ecma_loader::{
+use ad_swc_ecma_loader::{
     resolve::{Resolution, Resolve},
     resolvers::tsc::TsConfigResolver,
 };

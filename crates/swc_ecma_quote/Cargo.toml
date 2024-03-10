@@ -1,21 +1,39 @@
+
 [package]
-authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
-description   = "Quasi quotation system for ecmascript"
+authors = ["강동윤 <kdy1997.dev@gmail.com>"]
+description = "Quasi quotation system for ecmascript"
 documentation = "https://rustdoc.swc.rs/swc_ecma_quote/"
-edition       = "2021"
-license       = "Apache-2.0"
-name          = "swc_ecma_quote"
-repository    = "https://github.com/swc-project/swc.git"
-version       = "0.59.11"
+edition = "2021"
+license = "Apache-2.0"
+name = "ad_swc_ecma_quote"
+repository = "https://github.com/swc-project/swc.git"
+version = "1.0.0"
+_name = "swc_ecma_quote"
 
 [lib]
 bench = false
 
-[dependencies]
-swc_atoms             = { version = "0.6.5", path = "../swc_atoms" }
-swc_common            = { version = "0.33.19", path = "../swc_common" }
-swc_ecma_ast          = { version = "0.112.5", path = "../swc_ecma_ast" }
-swc_ecma_quote_macros = { version = "0.54.11", path = "../swc_ecma_quote_macros" }
+[dependencies.swc_atoms]
+version = "1.0.0"
+path = "../swc_atoms"
+package = "ad_swc_atoms"
 
-[dev-dependencies]
-testing = { version = "0.35.20", path = "../testing" }
+[dependencies.swc_common]
+version = "1.0.0"
+path = "../swc_common"
+package = "ad_swc_common"
+
+[dependencies.swc_ecma_ast]
+version = "1.0.0"
+path = "../swc_ecma_ast"
+package = "ad_swc_ecma_ast"
+
+[dependencies.swc_ecma_quote_macros]
+version = "1.0.0"
+path = "../swc_ecma_quote_macros"
+package = "ad_swc_ecma_quote_macros"
+
+[dev-dependencies.testing]
+version = "1.0.0"
+path = "../testing"
+package = "ad_testing"

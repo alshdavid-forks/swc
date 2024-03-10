@@ -9,7 +9,7 @@ use serde::Deserialize;
 use swc_common::{chain, comments::SingleThreadedComments, Mark};
 use swc_ecma_parser::{EsConfig, Syntax, TsConfig};
 use swc_ecma_transforms_base::{assumptions::Assumptions, resolver};
-use swc_ecma_transforms_proposal::decorator_2022_03::decorator_2022_03;
+use ad_swc_ecma_transforms_proposal::decorator_2022_03::decorator_2022_03;
 use swc_ecma_transforms_testing::{test_fixture, FixtureTestConfig};
 use swc_ecma_visit::Fold;
 

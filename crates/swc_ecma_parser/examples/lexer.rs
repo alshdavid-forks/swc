@@ -4,7 +4,7 @@ use swc_common::{
     sync::Lrc,
     FileName, SourceMap,
 };
-use swc_ecma_parser::{lexer::Lexer, Capturing, Parser, StringInput, Syntax};
+use ad_swc_ecma_parser::{lexer::Lexer, Capturing, Parser, StringInput, Syntax};
 
 fn main() {
     let cm: Lrc<SourceMap> = Default::default();

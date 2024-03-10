@@ -1,6 +1,6 @@
 #![allow(clippy::ptr_arg)]
 
-use swc_visit::define;
+use ad_swc_visit::define;
 
 #[derive(Debug, PartialEq)]
 pub struct Item {

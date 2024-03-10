@@ -3,7 +3,7 @@ use std::path::PathBuf;
 use swc_common::{chain, pass::Repeat, Mark};
 use swc_ecma_parser::{EsConfig, Syntax};
 use swc_ecma_transforms_base::fixer::paren_remover;
-use swc_ecma_transforms_optimization::simplify::{dce::dce, expr_simplifier};
+use ad_swc_ecma_transforms_optimization::simplify::{dce::dce, expr_simplifier};
 use swc_ecma_transforms_testing::{test_fixture, Tester};
 use swc_ecma_visit::{as_folder, Fold, VisitMut};
 

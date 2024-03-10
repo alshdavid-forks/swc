@@ -12,7 +12,7 @@ use swc_ecma_transforms_compat::{
 };
 use swc_ecma_transforms_proposal::decorators;
 use swc_ecma_transforms_testing::{test, test_exec, test_fixture, Tester};
-use swc_ecma_transforms_typescript::{
+use ad_swc_ecma_transforms_typescript::{
     tsx, typescript, ImportsNotUsedAsValues, TsImportExportAssignConfig, TsxConfig,
 };
 use swc_ecma_visit::Fold;

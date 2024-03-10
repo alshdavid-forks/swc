@@ -2,7 +2,7 @@
 
 use std::path::PathBuf;
 
-use testing_macros::fixture;
+use ad_testing_macros::fixture;
 
 #[fixture("tests/simple/*.ts")]
 fn simple(_path: PathBuf) {}

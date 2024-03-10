@@ -1,5 +1,5 @@
 use serde_json::from_str;
-use swc_common::ast_serde;
+use ad_swc_common::ast_serde;
 
 #[ast_serde]
 #[derive(Debug, PartialEq, Eq)]

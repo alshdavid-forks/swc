@@ -3,7 +3,7 @@ extern crate swc_malloc;
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{input::StringInput, FileName, Span, SyntaxContext, DUMMY_SP};
 use swc_html_ast::{Document, DocumentFragment, DocumentMode, Element, Namespace};
-use swc_html_parser::{lexer::Lexer, parser::Parser};
+use ad_swc_html_parser::{lexer::Lexer, parser::Parser};
 use swc_html_visit::{Fold, FoldWith, VisitMut, VisitMutWith};
 
 static SOURCE: &str = include_str!("files/github_com_17_05_2022.html");

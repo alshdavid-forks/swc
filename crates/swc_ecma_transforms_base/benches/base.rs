@@ -5,7 +5,7 @@ extern crate swc_malloc;
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{chain, errors::HANDLER, FileName, Mark};
 use swc_ecma_parser::{Parser, StringInput, Syntax};
-use swc_ecma_transforms_base::helpers;
+use ad_swc_ecma_transforms_base::helpers;
 use swc_ecma_visit::FoldWith;
 
 static SOURCE: &str = include_str!("../../swc_ecma_minifier/benches/full/typescript.js");
@@ -38,7 +38,7 @@ macro_rules! tr {
 }
 
 fn resolver(b: &mut Bencher) {
-    tr!(b, || swc_ecma_transforms_base::resolver(
+    tr!(b, || ad_swc_ecma_transforms_base::resolver(
         Mark::new(),
         Mark::new(),
         false
@@ -46,17 +46,17 @@ fn resolver(b: &mut Bencher) {
 }
 
 fn fixer(b: &mut Bencher) {
-    tr!(b, || swc_ecma_transforms_base::fixer::fixer(None));
+    tr!(b, || ad_swc_ecma_transforms_base::fixer::fixer(None));
 }
 
 fn hygiene(b: &mut Bencher) {
-    tr!(b, swc_ecma_transforms_base::hygiene::hygiene);
+    tr!(b, ad_swc_ecma_transforms_base::hygiene::hygiene);
 }
 
 fn resolver_with_hygiene(b: &mut Bencher) {
     tr!(b, || chain!(
-        swc_ecma_transforms_base::resolver(Mark::new(), Mark::new(), false),
-        swc_ecma_transforms_base::hygiene::hygiene()
+        ad_swc_ecma_transforms_base::resolver(Mark::new(), Mark::new(), false),
+        ad_swc_ecma_transforms_base::hygiene::hygiene()
     ));
 }
 

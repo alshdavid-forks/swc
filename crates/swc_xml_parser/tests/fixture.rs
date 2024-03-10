@@ -8,7 +8,7 @@ use std::path::PathBuf;
 
 use swc_common::{errors::Handler, input::SourceFileInput, Spanned};
 use swc_xml_ast::*;
-use swc_xml_parser::{
+use ad_swc_xml_parser::{
     lexer::Lexer,
     parser::{PResult, Parser, ParserConfig},
 };

@@ -1,4 +1,4 @@
-extern crate swc_malloc;
+extern crate ad_swc_malloc;
 
 use std::{
     io::{self, stderr},
@@ -6,22 +6,22 @@ use std::{
 };
 
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
-use swc::config::{Config, IsModule, JscConfig, Options};
-use swc_common::{
+use ad_swc::config::{Config, IsModule, JscConfig, Options};
+use ad_swc_common::{
     errors::Handler, FileName, FilePathMapping, Mark, SourceFile, SourceMap, GLOBALS,
 };
-use swc_compiler_base::PrintArgs;
-use swc_ecma_ast::{EsVersion, Program};
-use swc_ecma_parser::Syntax;
-use swc_ecma_transforms::{fixer, hygiene, resolver, typescript};
-use swc_ecma_visit::FoldWith;
+use ad_swc_compiler_base::PrintArgs;
+use ad_swc_ecma_ast::{EsVersion, Program};
+use ad_swc_ecma_parser::Syntax;
+use ad_swc_ecma_transforms::{fixer, hygiene, resolver, typescript};
+use ad_swc_ecma_visit::FoldWith;
 
 static SOURCE: &str = include_str!("assets/Observable.ts");
 
-fn mk() -> swc::Compiler {
+fn mk() -> ad_swc::Compiler {
     let cm = Arc::new(SourceMap::new(FilePathMapping::empty()));
 
-    swc::Compiler::new(cm)
+    ad_swc::Compiler::new(cm)
 }
 
 fn parse(c: &swc::Compiler) -> (Arc<SourceFile>, Program) {
@@ -114,7 +114,7 @@ fn bench_codegen(b: &mut Bencher, _target: EsVersion) {
                 c.print(
                     &module,
                     PrintArgs {
-                        codegen_config: swc_ecma_codegen::Config::default()
+                        codegen_config: ad_swc_ecma_codegen::Config::default()
                             .with_target(EsVersion::Es2020),
                         ..Default::default()
                     },
@@ -178,7 +178,7 @@ fn full_group(c: &mut Criterion) {
                             module: None,
                             ..Default::default()
                         },
-                        swcrc: false,
+                        ad_swcrc: false,
                         ..Default::default()
                     },
                 );

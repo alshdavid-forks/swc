@@ -9,7 +9,7 @@ use swc_ecma_ast::{EsVersion, Program};
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms::{compat::es2020, resolver, typescript};
 use swc_ecma_visit::FoldWith;
-use swc_estree_compat::babelify::{Babelify, Context};
+use ad_swc_estree_compat::babelify::{Babelify, Context};
 
 static SOURCE: &str = include_str!("assets/AjaxObservable.ts");
 

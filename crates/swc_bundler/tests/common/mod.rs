@@ -9,7 +9,7 @@ use anyhow::{bail, Context, Error};
 use path_clean::PathClean;
 use reqwest::Url;
 use sha1::{Digest, Sha1};
-use swc_bundler::{Load, ModuleData, Resolve};
+use ad_swc_bundler::{Load, ModuleData, Resolve};
 use swc_common::{
     comments::SingleThreadedComments,
     errors::{ColorConfig, Handler},

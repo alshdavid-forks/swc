@@ -54,7 +54,7 @@ fn fixture(path: PathBuf) {
                     path.display(),
                     cmt.text
                 );
-                let (_, parsed) = jsdoc::parse(cmt.into()).unwrap();
+                let (_, parsed) = ad_jsdoc::parse(cmt.into()).unwrap();
                 res.push(parsed);
             }
         }

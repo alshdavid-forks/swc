@@ -1,12 +1,12 @@
-use swc::{
+use ad_swc::{
     config::{Config, InputSourceMap, JscConfig, ModuleConfig, Options, SourceMapsConfig},
     Compiler,
 };
-use swc_common::{comments::SingleThreadedComments, FileName};
-use swc_ecma_ast::*;
-use swc_ecma_parser::{EsConfig, Syntax, TsConfig};
-use swc_ecma_transforms::pass::noop;
-use swc_ecma_visit::{as_folder, noop_visit_mut_type, VisitMut};
+use ad_swc_common::{comments::SingleThreadedComments, FileName};
+use ad_swc_ecma_ast::*;
+use ad_swc_ecma_parser::{EsConfig, Syntax, TsConfig};
+use ad_swc_ecma_transforms::pass::noop;
+use ad_swc_ecma_visit::{as_folder, noop_visit_mut_type, VisitMut};
 
 struct PanicOnVisit;
 

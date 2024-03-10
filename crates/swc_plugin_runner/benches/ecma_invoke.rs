@@ -53,7 +53,7 @@ fn bench_transform(b: &mut Bencher, plugin_dir: &Path) {
     let store = wasmer::Store::default();
     let module = wasmer::Module::new(&store, raw_module_bytes).unwrap();
 
-    let plugin_module = swc_plugin_runner::plugin_module_bytes::CompiledPluginModuleBytes::new(
+    let plugin_module = ad_swc_plugin_runner::plugin_module_bytes::CompiledPluginModuleBytes::new(
         path.as_os_str()
             .to_str()
             .expect("Should able to get path")
@@ -81,7 +81,7 @@ fn bench_transform(b: &mut Bencher, plugin_dir: &Path) {
             let program = VersionedSerializable::new(program);
             let program_ser = PluginSerializedBytes::try_serialize(&program).unwrap();
 
-            let mut transform_plugin_executor = swc_plugin_runner::create_plugin_transform_executor(
+            let mut transform_plugin_executor = ad_swc_plugin_runner::create_plugin_transform_executor(
                 &cm,
                 &Mark::new(),
                 &Arc::new(TransformPluginMetadataContext::new(

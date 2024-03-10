@@ -2,7 +2,7 @@ extern crate swc_malloc;
 
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{input::StringInput, FileName};
-use swc_css_parser::lexer::Lexer;
+use ad_swc_css_parser::lexer::Lexer;
 
 fn bench_stylesheet(b: &mut Bencher, src: &'static str) {
     let _ = ::testing::run_test(false, |cm, _| {

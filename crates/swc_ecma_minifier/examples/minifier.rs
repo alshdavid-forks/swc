@@ -6,7 +6,7 @@ use std::{env::args, fs, path::Path};
 
 use swc_common::{errors::HANDLER, sync::Lrc, Mark, SourceMap};
 use swc_ecma_codegen::text_writer::{omit_trailing_semi, JsWriter};
-use swc_ecma_minifier::{
+use ad_swc_ecma_minifier::{
     optimize,
     option::{ExtraOptions, MangleOptions, MinifyOptions},
 };

@@ -3,7 +3,7 @@
 use ast_node::ast_node;
 use criterion::{black_box, criterion_group, criterion_main, Criterion};
 use serde::{Deserialize, Serialize};
-use swc_common::{Span, DUMMY_SP};
+use ad_swc_common::{Span, DUMMY_SP};
 
 #[derive(Serialize, Deserialize)]
 pub struct SerdeStr {

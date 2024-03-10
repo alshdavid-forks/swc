@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 
 use common::{document_dom_visualizer, document_span_visualizer};
-use swc_html_parser::parser::ParserConfig;
+use ad_swc_html_parser::parser::ParserConfig;
 
 use crate::common::document_test;
 

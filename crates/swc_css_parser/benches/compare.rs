@@ -5,7 +5,7 @@ use swc_common::{
     comments::SingleThreadedComments, input::StringInput, FileName, Span, SyntaxContext, DUMMY_SP,
 };
 use swc_css_ast::Stylesheet;
-use swc_css_parser::{lexer::Lexer, parser::Parser};
+use ad_swc_css_parser::{lexer::Lexer, parser::Parser};
 use swc_css_visit::{Fold, FoldWith, VisitMut, VisitMutWith};
 
 static SOURCE: &str = include_str!("files/bootstrap_5_1_3.css");

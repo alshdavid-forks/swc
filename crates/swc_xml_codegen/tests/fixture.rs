@@ -7,7 +7,7 @@ use std::{
 
 use swc_common::{FileName, Span};
 use swc_xml_ast::*;
-use swc_xml_codegen::{
+use ad_swc_xml_codegen::{
     writer::basic::{BasicXmlWriter, BasicXmlWriterConfig, IndentType, LineFeed},
     CodeGenerator, CodegenConfig, Emit,
 };

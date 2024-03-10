@@ -1,6 +1,6 @@
 use swc_common::{errors::HANDLER, Mark, SyntaxContext};
 use swc_ecma_ast::*;
-use swc_ecma_lints::{rule::Rule, rules::LintParams};
+use ad_swc_ecma_lints::{rule::Rule, rules::LintParams};
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_base::resolver;
 use swc_ecma_visit::VisitMutWith;
@@ -35,7 +35,7 @@ fn main() {
 
             program.visit_mut_with(&mut resolver(unresolved_mark, top_level_mark, false));
 
-            let mut rules = swc_ecma_lints::rules::all(LintParams {
+            let mut rules = ad_swc_ecma_lints::rules::all(LintParams {
                 program: &program,
                 lint_config: &Default::default(),
                 unresolved_ctxt,

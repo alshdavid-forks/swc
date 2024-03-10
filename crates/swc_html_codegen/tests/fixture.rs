@@ -7,7 +7,7 @@ use std::{
 
 use swc_common::{FileName, Span};
 use swc_html_ast::*;
-use swc_html_codegen::{
+use ad_swc_html_codegen::{
     writer::basic::{BasicHtmlWriter, BasicHtmlWriterConfig, IndentType, LineFeed},
     CodeGenerator, CodegenConfig, Emit,
 };

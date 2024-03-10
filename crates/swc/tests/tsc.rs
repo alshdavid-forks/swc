@@ -13,15 +13,15 @@ use once_cell::sync::Lazy;
 use regex::Regex;
 use serde::de::DeserializeOwned;
 use serde_json::from_str;
-use swc::{
+use ad_swc::{
     config::{Config, JsMinifyOptions, JscConfig, ModuleConfig, Options, TransformConfig},
     try_with_handler, Compiler,
 };
-use swc_common::{
+use ad_swc_common::{
     collections::AHashSet, errors::ColorConfig, FileName, SourceFile, SourceMap, GLOBALS,
 };
-use swc_ecma_ast::EsVersion;
-use swc_ecma_parser::{Syntax, TsConfig};
+use ad_swc_ecma_ast::EsVersion;
+use ad_swc_ecma_parser::{Syntax, TsConfig};
 use testing::NormalizedOutput;
 
 #[testing::fixture(
@@ -441,7 +441,7 @@ fn compile(output: &Path, test_unit_data: TestUnitData) {
         GLOBALS.set(&Default::default(), || {
             match try_with_handler(
                 cm.clone(),
-                swc::HandlerOpts {
+                ad_swc::HandlerOpts {
                     color: ColorConfig::Never,
                     skip_filename: true,
                 },

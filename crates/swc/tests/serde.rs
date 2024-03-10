@@ -1,7 +1,7 @@
 use std::path::Path;
 
-use swc_ecma_ast::Module;
-use swc_ecma_parser::{lexer::Lexer, PResult, Parser, Syntax};
+use ad_swc_ecma_ast::Module;
+use ad_swc_ecma_parser::{lexer::Lexer, PResult, Parser, Syntax};
 use testing::NormalizedOutput;
 
 fn with_parser<F, Ret>(file_name: &str, f: F) -> Result<Ret, NormalizedOutput>

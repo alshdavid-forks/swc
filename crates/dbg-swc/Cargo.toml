@@ -1,42 +1,86 @@
+
 [package]
-authors     = ["강동윤 <kdy1997.dev@gmail.com>"]
+authors = ["강동윤 <kdy1997.dev@gmail.com>"]
 description = "Debug utilities"
-edition     = "2021"
-license     = "Apache-2.0"
-name        = "dbg-swc"
-repository  = "https://github.com/kdy1/dbg-swc.git"
-version     = "0.91.18"
+edition = "2021"
+license = "Apache-2.0"
+name = "ad_dbg-swc"
+repository = "https://github.com/kdy1/dbg-swc.git"
+version = "1.0.0"
+_name = "dbg-swc"
 
 [[bin]]
 bench = false
-name  = "dbg-swc"
+name = "dbg-swc"
 
 [dependencies]
-anyhow             = "1.0.71"
-clap               = { version = "3", features = ["derive"] }
-dialoguer          = "0.10.2"
-flate2             = "1.0"
-rayon              = "1.7.0"
-serde              = "1"
-serde_json         = "1"
-sha1               = "0.10.5"
-tempfile           = "3.6.0"
-tracing            = "0.1.37"
-tracing-subscriber = { version = "0.3.17", features = ["fmt", "env-filter"] }
-url                = "2"
+anyhow = "1.0.71"
+dialoguer = "0.10.2"
+flate2 = "1.0"
+rayon = "1.7.0"
+serde = "1"
+serde_json = "1"
+sha1 = "0.10.5"
+tempfile = "3.6.0"
+tracing = "0.1.37"
+url = "2"
 
-swc_atoms = { version = "0.6.5", path = "../swc_atoms" }
-swc_common = { version = "0.33.19", features = [
-  "concurrent",
-  "tty-emitter",
-], path = "../swc_common" }
-swc_ecma_ast = { version = "0.112.5", path = "../swc_ecma_ast" }
-swc_ecma_codegen = { version = "0.148.10", path = "../swc_ecma_codegen" }
-swc_ecma_minifier = { version = "0.192.14", path = "../swc_ecma_minifier", features = [
-  "concurrent",
-] }
-swc_ecma_parser = { version = "0.143.8", path = "../swc_ecma_parser" }
-swc_ecma_transforms_base = { version = "0.137.13", path = "../swc_ecma_transforms_base" }
-swc_ecma_visit = { version = "0.98.6", path = "../swc_ecma_visit" }
-swc_error_reporters = { version = "0.17.18", path = "../swc_error_reporters" }
-swc_timer = { version = "0.21.20", path = "../swc_timer" }
+[dependencies.clap]
+version = "3"
+features = ["derive"]
+
+[dependencies.tracing-subscriber]
+version = "0.3.17"
+features = ["fmt","env-filter"]
+
+[dependencies.swc_atoms]
+version = "1.0.0"
+path = "../swc_atoms"
+package = "ad_swc_atoms"
+
+[dependencies.swc_common]
+version = "1.0.0"
+features = ["concurrent","tty-emitter"]
+path = "../swc_common"
+package = "ad_swc_common"
+
+[dependencies.swc_ecma_ast]
+version = "1.0.0"
+path = "../swc_ecma_ast"
+package = "ad_swc_ecma_ast"
+
+[dependencies.swc_ecma_codegen]
+version = "1.0.0"
+path = "../swc_ecma_codegen"
+package = "ad_swc_ecma_codegen"
+
+[dependencies.swc_ecma_minifier]
+version = "1.0.0"
+path = "../swc_ecma_minifier"
+features = ["concurrent"]
+package = "ad_swc_ecma_minifier"
+
+[dependencies.swc_ecma_parser]
+version = "1.0.0"
+path = "../swc_ecma_parser"
+package = "ad_swc_ecma_parser"
+
+[dependencies.swc_ecma_transforms_base]
+version = "1.0.0"
+path = "../swc_ecma_transforms_base"
+package = "ad_swc_ecma_transforms_base"
+
+[dependencies.swc_ecma_visit]
+version = "1.0.0"
+path = "../swc_ecma_visit"
+package = "ad_swc_ecma_visit"
+
+[dependencies.swc_error_reporters]
+version = "1.0.0"
+path = "../swc_error_reporters"
+package = "ad_swc_error_reporters"
+
+[dependencies.swc_timer]
+version = "1.0.0"
+path = "../swc_timer"
+package = "ad_swc_timer"

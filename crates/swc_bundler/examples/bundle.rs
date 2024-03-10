@@ -11,7 +11,7 @@ use std::{
 };
 
 use anyhow::Error;
-use swc_bundler::{Bundle, Bundler, Load, ModuleData, ModuleRecord};
+use ad_swc_bundler::{Bundle, Bundler, Load, ModuleData, ModuleRecord};
 use swc_common::{
     errors::{ColorConfig, Handler},
     sync::Lrc,
@@ -78,7 +78,7 @@ fn do_test(_entry: &Path, entries: HashMap<String, FileName>, inline: bool, mini
                 4096,
                 NodeModulesResolver::new(TargetEnv::Node, Default::default(), true),
             ),
-            swc_bundler::Config {
+            ad_swc_bundler::Config {
                 require: false,
                 disable_inliner: !inline,
                 external_modules: Default::default(),
@@ -180,7 +180,7 @@ fn main() -> Result<(), Error> {
 
 struct Hook;
 
-impl swc_bundler::Hook for Hook {
+impl ad_swc_bundler::Hook for Hook {
     fn get_import_meta_props(
         &self,
         span: Span,

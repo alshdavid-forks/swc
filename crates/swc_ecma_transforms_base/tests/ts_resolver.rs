@@ -5,7 +5,7 @@ use std::path::PathBuf;
 use swc_common::{Mark, SyntaxContext};
 use swc_ecma_ast::*;
 use swc_ecma_parser::{parse_file_as_module, Syntax, TsConfig};
-use swc_ecma_transforms_base::resolver;
+use ad_swc_ecma_transforms_base::resolver;
 use swc_ecma_visit::{FoldWith, Visit, VisitWith};
 use testing::fixture;
 

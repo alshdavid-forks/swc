@@ -1,13 +1,15 @@
+
 [package]
-authors       = ["강동윤 <kdy1997.dev@gmail.com>"]
-description   = "CSS minifier"
+authors = ["강동윤 <kdy1997.dev@gmail.com>"]
+description = "CSS minifier"
 documentation = "https://rustdoc.swc.rs/swc_css_minifier/"
-edition       = "2021"
-include       = ["Cargo.toml", "src/**/*.rs"]
-license       = "Apache-2.0"
-name          = "swc_css_minifier"
-repository    = "https://github.com/swc-project/swc.git"
-version       = "0.116.31"
+edition = "2021"
+include = ["Cargo.toml","src/**/*.rs"]
+license = "Apache-2.0"
+name = "ad_swc_css_minifier"
+repository = "https://github.com/swc-project/swc.git"
+version = "1.0.0"
+_name = "swc_css_minifier"
 
 [lib]
 bench = false
@@ -15,20 +17,54 @@ bench = false
 [dependencies]
 serde = "1.0.118"
 
-swc_atoms     = { version = "0.6.5", path = "../swc_atoms" }
-swc_common    = { version = "0.33.19", path = "../swc_common" }
-swc_css_ast   = { version = "0.140.20", path = "../swc_css_ast" }
-swc_css_utils = { version = "0.137.20", path = "../swc_css_utils/" }
-swc_css_visit = { version = "0.139.20", path = "../swc_css_visit" }
+[dependencies.swc_atoms]
+version = "1.0.0"
+path = "../swc_atoms"
+package = "ad_swc_atoms"
+
+[dependencies.swc_common]
+version = "1.0.0"
+path = "../swc_common"
+package = "ad_swc_common"
+
+[dependencies.swc_css_ast]
+version = "1.0.0"
+path = "../swc_css_ast"
+package = "ad_swc_css_ast"
+
+[dependencies.swc_css_utils]
+version = "1.0.0"
+path = "../swc_css_utils/"
+package = "ad_swc_css_utils"
+
+[dependencies.swc_css_visit]
+version = "1.0.0"
+path = "../swc_css_visit"
+package = "ad_swc_css_visit"
 
 [dev-dependencies]
 criterion = "0.5"
 
-swc_css_codegen = { version = "0.151.30", path = "../swc_css_codegen" }
-swc_css_parser  = { version = "0.150.29", path = "../swc_css_parser" }
-swc_malloc      = { version = "0.5.10", path = "../swc_malloc" }
-testing         = { version = "0.35.20", path = "../testing" }
+[dev-dependencies.swc_css_codegen]
+version = "1.0.0"
+path = "../swc_css_codegen"
+package = "ad_swc_css_codegen"
+
+[dev-dependencies.swc_css_parser]
+version = "1.0.0"
+path = "../swc_css_parser"
+package = "ad_swc_css_parser"
+
+[dev-dependencies.swc_malloc]
+version = "1.0.0"
+path = "../swc_malloc"
+package = "ad_swc_malloc"
+
+[dev-dependencies.testing]
+version = "1.0.0"
+path = "../testing"
+package = "ad_testing"
 
 [[bench]]
 harness = false
-name    = "full"
+name = "full"

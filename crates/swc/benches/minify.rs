@@ -1,17 +1,17 @@
 /// Explicit extern crate to use allocator.
-extern crate swc_malloc;
+extern crate ad_swc_malloc;
 
 use std::{path::PathBuf, sync::Arc};
 
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
-use swc::{config::JsMinifyOptions, try_with_handler, BoolOrDataConfig};
-use swc_common::{FilePathMapping, SourceMap};
-use swc_ecma_utils::swc_common::GLOBALS;
+use ad_swc::{config::JsMinifyOptions, try_with_handler, BoolOrDataConfig};
+use ad_swc_common::{FilePathMapping, SourceMap};
+use ad_swc_ecma_utils::swc_common::GLOBALS;
 
-fn mk() -> swc::Compiler {
+fn mk() -> ad_swc::Compiler {
     let cm = Arc::new(SourceMap::new(FilePathMapping::empty()));
 
-    swc::Compiler::new(cm)
+    ad_swc::Compiler::new(cm)
 }
 
 fn bench_minify(b: &mut Bencher, filename: &str) {

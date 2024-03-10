@@ -1,4 +1,4 @@
-use swc_common::{BytePos, Span, Spanned};
+use ad_swc_common::{BytePos, Span, Spanned};
 
 #[test]
 fn lo_hi() {

@@ -10,7 +10,7 @@ use swc_html_codegen::{
     writer::basic::{BasicHtmlWriter, BasicHtmlWriterConfig},
     CodeGenerator, CodegenConfig, Emit,
 };
-use swc_html_minifier::{minify_document, minify_document_fragment, option::MinifyOptions};
+use ad_swc_html_minifier::{minify_document, minify_document_fragment, option::MinifyOptions};
 use swc_html_parser::{parse_file_as_document, parse_file_as_document_fragment};
 use testing::NormalizedOutput;
 

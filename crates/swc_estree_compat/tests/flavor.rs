@@ -9,7 +9,7 @@ use swc::SwcComments;
 use swc_ecma_ast::EsVersion;
 use swc_ecma_parser::{lexer::Lexer, Parser, StringInput, Syntax};
 use swc_estree_ast::flavor::Flavor;
-use swc_estree_compat::babelify::Babelify;
+use ad_swc_estree_compat::babelify::Babelify;
 use testing::{assert_eq, json::diff_json_value, DebugUsingDisplay, NormalizedOutput};
 
 fn assert_flavor(flavor: Flavor, input: &Path, output_json_path: &Path) {
@@ -26,7 +26,7 @@ fn assert_flavor(flavor: Flavor, input: &Path, output_json_path: &Path) {
 
         let program = parser.parse_program().unwrap();
 
-        let ctx = swc_estree_compat::babelify::Context {
+        let ctx = ad_swc_estree_compat::babelify::Context {
             fm: fm.clone(),
             cm,
             comments: SwcComments::default(),

@@ -3,7 +3,7 @@ use std::path::PathBuf;
 use swc_common::{chain, Mark};
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::{
+use ad_swc_ecma_transforms_compat::{
     es2015,
     es2015::{
         block_scoping,

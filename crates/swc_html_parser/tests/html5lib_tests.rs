@@ -12,7 +12,7 @@ use swc_common::{
     BytePos,
 };
 use swc_html_ast::*;
-use swc_html_parser::{
+use ad_swc_html_parser::{
     error::ErrorKind,
     lexer::{Lexer, State},
     parser::{input::ParserInput, PResult, Parser, ParserConfig},

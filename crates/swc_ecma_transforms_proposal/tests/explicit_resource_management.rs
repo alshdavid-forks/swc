@@ -3,7 +3,7 @@ use std::{fs::read_to_string, path::PathBuf};
 use swc_common::{chain, Mark};
 use swc_ecma_parser::{EsConfig, Syntax};
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_proposal::explicit_resource_management::explicit_resource_management;
+use ad_swc_ecma_transforms_proposal::explicit_resource_management::explicit_resource_management;
 use swc_ecma_transforms_testing::{exec_tr, test_fixture, FixtureTestConfig};
 
 #[testing::fixture("tests/explicit-resource-management/exec-sync/**/*.js")]

@@ -5,7 +5,7 @@ use rustc_hash::FxHashSet;
 use sourcemap::SourceMap;
 use swc_common::{comments::SingleThreadedComments, source_map::SourceMapGenConfig};
 use swc_ecma_ast::EsVersion;
-use swc_ecma_codegen::{self, text_writer::WriteJs, Emitter};
+use ad_swc_ecma_codegen::{self, text_writer::WriteJs, Emitter};
 use swc_ecma_parser::{lexer::Lexer, Parser, Syntax};
 use swc_ecma_testing::{exec_node_js, JsExecOptions};
 
@@ -323,7 +323,7 @@ fn identity(entry: PathBuf) {
             wr = Box::new(swc_ecma_codegen::text_writer::omit_trailing_semi(wr));
 
             let mut emitter = Emitter {
-                cfg: swc_ecma_codegen::Config::default()
+                cfg: ad_swc_ecma_codegen::Config::default()
                     .with_minify(true)
                     .with_ascii_only(true)
                     .with_target(EsVersion::Es5),

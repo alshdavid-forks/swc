@@ -7,7 +7,7 @@ use swc_common::{
     comments::SingleThreadedComments, errors::Handler, input::SourceFileInput, Span, Spanned,
 };
 use swc_css_ast::*;
-use swc_css_parser::{
+use ad_swc_css_parser::{
     lexer::Lexer,
     parse_input,
     parser::{

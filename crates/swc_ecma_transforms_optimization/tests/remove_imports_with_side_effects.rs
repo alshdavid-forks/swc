@@ -1,7 +1,7 @@
 use swc_common::{chain, pass::Repeat, Mark};
 use swc_ecma_parser::{EsConfig, Syntax};
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_optimization::simplify::dce::{dce, Config};
+use ad_swc_ecma_transforms_optimization::simplify::dce::{dce, Config};
 use swc_ecma_transforms_testing::test;
 use swc_ecma_visit::Fold;
 

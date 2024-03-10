@@ -1,4 +1,4 @@
-use swc_config::merge::Merge;
+use ad_swc_config::merge::Merge;
 
 #[derive(Merge)]
 struct Fields {

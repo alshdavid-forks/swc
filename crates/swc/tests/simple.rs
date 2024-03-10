@@ -1,10 +1,10 @@
-use swc::{
+use ad_swc::{
     config::{Config, IsModule, JscConfig, Options},
     Compiler,
 };
-use swc_common::FileName;
-use swc_ecma_ast::EsVersion;
-use swc_ecma_parser::{Syntax, TsConfig};
+use ad_swc_common::FileName;
+use ad_swc_ecma_ast::EsVersion;
+use ad_swc_ecma_parser::{Syntax, TsConfig};
 use testing::Tester;
 
 fn compile(src: &str, options: Options) -> String {
@@ -34,7 +34,7 @@ fn issue_834_1() {
     compile(
         "var foo =  2n + 7n;",
         Options {
-            swcrc: false,
+            ad_swcrc: false,
             ..Default::default()
         },
     );
@@ -58,7 +58,7 @@ const someValue = 'test' ?? 'default value';",
                 },
                 ..Default::default()
             },
-            swcrc: false,
+            ad_swcrc: false,
             ..Default::default()
         },
     );
@@ -76,7 +76,7 @@ fn issue_834_3() {
                 },
                 ..Default::default()
             },
-            swcrc: false,
+            ad_swcrc: false,
             ..Default::default()
         },
     );
@@ -105,7 +105,7 @@ fn test_tsx_escape_xhtml() {
                 },
                 ..Default::default()
             },
-            swcrc: false,
+            ad_swcrc: false,
             ..Default::default()
         },
     );
@@ -126,7 +126,7 @@ fn test_tsx_escape_xhtml() {
                 },
                 ..Default::default()
             },
-            swcrc: false,
+            ad_swcrc: false,
             ..Default::default()
         },
     );
@@ -142,7 +142,7 @@ fn is_module_unknown_script() {
     let compiled = compile(
         source,
         Options {
-            swcrc: false,
+            ad_swcrc: false,
             config: Config {
                 is_module: Some(IsModule::Unknown),
                 ..Default::default()
@@ -162,7 +162,7 @@ fn is_module_unknown_module() {
     let compiled = compile(
         source,
         Options {
-            swcrc: false,
+            ad_swcrc: false,
             config: Config {
                 is_module: Some(IsModule::Unknown),
                 ..Default::default()

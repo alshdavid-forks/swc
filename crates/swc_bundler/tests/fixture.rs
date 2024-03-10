@@ -7,7 +7,7 @@ use std::{
 };
 
 use anyhow::Error;
-use swc_bundler::{BundleKind, Bundler, Config, ModuleRecord};
+use ad_swc_bundler::{BundleKind, Bundler, Config, ModuleRecord};
 use swc_common::{errors::HANDLER, FileName, Globals, Span};
 use swc_ecma_ast::{
     Bool, Expr, Ident, KeyValueProp, Lit, MemberExpr, MemberProp, MetaPropExpr, MetaPropKind,
@@ -141,7 +141,7 @@ fn pass(entry: PathBuf) {
 
 struct Hook;
 
-impl swc_bundler::Hook for Hook {
+impl ad_swc_bundler::Hook for Hook {
     fn get_import_meta_props(
         &self,
         span: Span,

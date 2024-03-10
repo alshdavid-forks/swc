@@ -3,7 +3,7 @@ use swc_common::{chain, comments::SingleThreadedComments, sync::Lrc, FileName, M
 use swc_ecma_ast::Module;
 use swc_ecma_parser::{lexer::Lexer, Parser, StringInput, Syntax};
 use swc_ecma_transforms_base::{helpers, resolver};
-use swc_ecma_transforms_typescript::strip;
+use ad_swc_ecma_transforms_typescript::strip;
 use swc_ecma_visit::{Fold, FoldWith};
 
 static SOURCE: &str = include_str!("assets/AjaxObservable.ts");

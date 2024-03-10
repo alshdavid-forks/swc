@@ -1,15 +1,15 @@
-extern crate swc_malloc;
+extern crate ad_swc_malloc;
 
 use std::{io::stderr, path::Path};
 
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
-use swc_common::{errors::Handler, sync::Lrc, FilePathMapping, SourceMap};
-use swc_ecma_utils::swc_common::GLOBALS;
+use ad_swc_common::{errors::Handler, sync::Lrc, FilePathMapping, SourceMap};
+use ad_swc_ecma_utils::swc_common::GLOBALS;
 
-fn mk() -> swc::Compiler {
+fn mk() -> ad_swc::Compiler {
     let cm = Lrc::new(SourceMap::new(FilePathMapping::empty()));
 
-    swc::Compiler::new(cm)
+    ad_swc::Compiler::new(cm)
 }
 
 fn bench_file(b: &mut Bencher, path: &Path) {

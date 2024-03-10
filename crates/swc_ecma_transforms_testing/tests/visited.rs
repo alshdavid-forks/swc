@@ -1,6 +1,6 @@
 use swc_ecma_ast::*;
 use swc_ecma_parser::{EsConfig, Syntax};
-use swc_ecma_transforms_testing::test_transform;
+use ad_swc_ecma_transforms_testing::test_transform;
 use swc_ecma_visit::Fold;
 
 struct Panicking;

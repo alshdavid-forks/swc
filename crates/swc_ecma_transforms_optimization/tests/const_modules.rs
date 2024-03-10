@@ -1,6 +1,6 @@
 use std::{collections::HashMap, fs::read_to_string, path::PathBuf};
 
-use swc_ecma_transforms_optimization::const_modules;
+use ad_swc_ecma_transforms_optimization::const_modules;
 use swc_ecma_transforms_testing::{test, test_fixture, Tester};
 use swc_ecma_visit::Fold;
 

@@ -13,7 +13,7 @@ use swc_css_codegen::{
     writer::basic::{BasicCssWriter, BasicCssWriterConfig},
     CodegenConfig, Emit,
 };
-use swc_css_compat::{
+use ad_swc_css_compat::{
     compiler::{Compiler, Config},
     feature::Features,
 };

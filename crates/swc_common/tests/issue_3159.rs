@@ -1,4 +1,4 @@
-use swc_common::ast_serde;
+use ad_swc_common::ast_serde;
 
 #[ast_serde]
 pub enum Message {

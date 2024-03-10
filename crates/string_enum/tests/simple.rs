@@ -1,6 +1,6 @@
 use std::fmt::{Debug, Display};
 
-use string_enum::*;
+use ad_string_enum::*;
 
 pub trait Assert: Debug + Display {}
 

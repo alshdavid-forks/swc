@@ -1,12 +1,14 @@
+
 [package]
 authors = ["강동윤 <kdy1997.dev@gmail.com>"]
 description = "Graph analyzer"
 edition = "2021"
-include = ["Cargo.toml", "src/**/*.rs"]
+include = ["Cargo.toml","src/**/*.rs"]
 license = "Apache-2.0"
-name = "swc_graph_analyzer"
+name = "ad_swc_graph_analyzer"
 repository = "https://github.com/swc-project/swc.git"
-version = "0.22.21"
+version = "1.0.0"
+_name = "swc_graph_analyzer"
 
 [lib]
 bench = false
@@ -14,9 +16,19 @@ bench = false
 [dependencies]
 auto_impl = "1.1.0"
 petgraph = "0.6.0"
-swc_common = {version = "0.33.19", path = "../swc_common/"}
-swc_fast_graph = {version = "0.21.19", path = "../swc_fast_graph/"}
 tracing = "0.1.37"
 
-[dev-dependencies]
-testing = {version = "0.35.20", path = "../testing"}
+[dependencies.swc_common]
+version = "1.0.0"
+path = "../swc_common/"
+package = "ad_swc_common"
+
+[dependencies.swc_fast_graph]
+version = "1.0.0"
+path = "../swc_fast_graph/"
+package = "ad_swc_fast_graph"
+
+[dev-dependencies.testing]
+version = "1.0.0"
+path = "../testing"
+package = "ad_testing"

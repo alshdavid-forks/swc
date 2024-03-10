@@ -7,7 +7,7 @@ extern crate napi_derive;
 use std::{env, panic::set_hook, sync::Arc};
 
 use backtrace::Backtrace;
-use swc_core::{
+use ad_swc_core::{
     base::Compiler,
     common::{sync::Lazy, FilePathMapping, SourceMap},
 };

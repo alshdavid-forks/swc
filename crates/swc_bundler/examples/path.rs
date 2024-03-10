@@ -1,7 +1,7 @@
 use std::{collections::HashMap, io::stdout};
 
 use anyhow::Error;
-use swc_bundler::{BundleKind, Bundler, Config, Hook, Load, ModuleData, ModuleRecord, Resolve};
+use ad_swc_bundler::{BundleKind, Bundler, Config, Hook, Load, ModuleData, ModuleRecord, Resolve};
 use swc_common::{sync::Lrc, FileName, FilePathMapping, Globals, SourceMap, Span};
 use swc_ecma_ast::KeyValueProp;
 use swc_ecma_codegen::{text_writer::JsWriter, Emitter};

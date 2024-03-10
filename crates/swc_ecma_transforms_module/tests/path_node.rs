@@ -5,7 +5,7 @@ use serde::Deserialize;
 use swc_common::FileName;
 use swc_ecma_loader::resolvers::{node::NodeModulesResolver, tsc::TsConfigResolver};
 use swc_ecma_parser::Syntax;
-use swc_ecma_transforms_module::{
+use ad_swc_ecma_transforms_module::{
     path::{ImportResolver, NodeImportResolver},
     rewriter::import_rewriter,
 };
@@ -97,7 +97,7 @@ fn paths_resolver(base_dir: &Path, rules: Vec<(String, Vec<String>)>) -> JscPath
             base_dir.clone(),
             rules,
         ),
-        swc_ecma_transforms_module::path::Config {
+        ad_swc_ecma_transforms_module::path::Config {
             base_dir: Some(base_dir),
             resolve_fully: false,
         },

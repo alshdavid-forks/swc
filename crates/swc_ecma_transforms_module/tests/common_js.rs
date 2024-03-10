@@ -4,7 +4,7 @@ use swc_common::{chain, comments::SingleThreadedComments, Mark};
 use swc_ecma_parser::{Syntax, TsConfig};
 use swc_ecma_transforms_base::{feature::FeatureFlag, resolver};
 use swc_ecma_transforms_compat::es2015::for_of;
-use swc_ecma_transforms_module::common_js::{self, common_js};
+use ad_swc_ecma_transforms_module::common_js::{self, common_js};
 use swc_ecma_transforms_testing::{test, test_fixture, FixtureTestConfig};
 use swc_ecma_visit::Fold;
 

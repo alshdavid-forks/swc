@@ -1,4 +1,4 @@
-use swc_core::binding_macros::{
+use ad_swc_core::binding_macros::{
     build_minify, build_minify_sync, build_parse, build_parse_sync, build_print, build_print_sync,
     build_transform, build_transform_sync,
 };

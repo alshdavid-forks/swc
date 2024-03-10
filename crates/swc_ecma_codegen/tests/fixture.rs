@@ -1,7 +1,7 @@
 use std::path::{Path, PathBuf};
 
 use swc_ecma_ast::EsVersion;
-use swc_ecma_codegen::{
+use ad_swc_ecma_codegen::{
     text_writer::{JsWriter, WriteJs},
     Emitter,
 };
@@ -49,7 +49,7 @@ fn run(input: &Path, minify: bool) {
             }
 
             let mut emitter = Emitter {
-                cfg: swc_ecma_codegen::Config::default().with_minify(minify),
+                cfg: ad_swc_ecma_codegen::Config::default().with_minify(minify),
                 cm,
                 comments: None,
                 wr,

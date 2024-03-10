@@ -8,7 +8,7 @@ use std::{
 
 use swc_common::comments::SingleThreadedComments;
 use swc_ecma_ast::EsVersion;
-use swc_ecma_codegen::{self, text_writer::WriteJs, Emitter};
+use ad_swc_ecma_codegen::{self, text_writer::WriteJs, Emitter};
 use swc_ecma_parser::{lexer::Lexer, Parser, Syntax};
 use testing::NormalizedOutput;
 
@@ -134,7 +134,7 @@ fn do_test(entry: &Path, minify: bool) {
             }
 
             let mut emitter = Emitter {
-                cfg: swc_ecma_codegen::Config::default()
+                cfg: ad_swc_ecma_codegen::Config::default()
                     .with_minify(minify)
                     .with_target(EsVersion::Es5),
                 cm,

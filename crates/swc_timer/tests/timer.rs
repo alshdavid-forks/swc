@@ -1,4 +1,4 @@
-use swc_timer::timer;
+use ad_swc_timer::timer;
 
 #[test]
 fn logging() {

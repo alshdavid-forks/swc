@@ -7,7 +7,7 @@ use std::{collections::HashMap, fs::write, path::PathBuf, process::Command};
 
 use anyhow::Error;
 use ntest::timeout;
-use swc_bundler::{Bundler, Load, ModuleRecord};
+use ad_swc_bundler::{Bundler, Load, ModuleRecord};
 use swc_common::{collections::AHashSet, errors::HANDLER, FileName, Mark, Span, GLOBALS};
 use swc_ecma_ast::*;
 use swc_ecma_codegen::{
@@ -1027,7 +1027,7 @@ fn bundle(url: &str, minify: bool) -> String {
                     cm.clone(),
                     Loader { cm: cm.clone() },
                     NodeResolver,
-                    swc_bundler::Config {
+                    ad_swc_bundler::Config {
                         require: false,
                         disable_inliner: false,
                         ..Default::default()
@@ -1102,7 +1102,7 @@ fn bundle(url: &str, minify: bool) -> String {
 
 struct Hook;
 
-impl swc_bundler::Hook for Hook {
+impl ad_swc_bundler::Hook for Hook {
     fn get_import_meta_props(
         &self,
         span: Span,

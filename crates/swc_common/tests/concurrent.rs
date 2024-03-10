@@ -3,7 +3,7 @@
 use std::{env, path::PathBuf, sync::Arc};
 
 use rayon::prelude::*;
-use swc_common::{sync::Lrc, FilePathMapping, SourceFile, SourceMap};
+use ad_swc_common::{sync::Lrc, FilePathMapping, SourceFile, SourceMap};
 
 #[test]
 fn no_overlap() {

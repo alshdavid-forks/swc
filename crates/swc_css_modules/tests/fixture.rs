@@ -7,7 +7,7 @@ use swc_css_codegen::{
     writer::basic::{BasicCssWriter, BasicCssWriterConfig, IndentType},
     CodeGenerator, Emit,
 };
-use swc_css_modules::CssClassName;
+use ad_swc_css_modules::CssClassName;
 use swc_css_parser::parser::ParserConfig;
 use testing::NormalizedOutput;
 
@@ -26,7 +26,7 @@ fn imports(input: PathBuf) {
             &mut errors,
         )
         .unwrap();
-        let result = swc_css_modules::imports::analyze_imports(&ss);
+        let result = ad_swc_css_modules::imports::analyze_imports(&ss);
 
         if result.is_empty() {
             return Ok(());
@@ -61,9 +61,9 @@ fn compile(input: PathBuf) {
         )
         .unwrap();
 
-        let _result = swc_css_modules::imports::analyze_imports(&ss);
+        let _result = ad_swc_css_modules::imports::analyze_imports(&ss);
 
-        let transform_result = swc_css_modules::compile(&mut ss, TestConfig {});
+        let transform_result = ad_swc_css_modules::compile(&mut ss, TestConfig {});
 
         let mut buf = String::new();
         {
@@ -148,7 +148,7 @@ enum CssClassNameForTest {
 
 struct TestConfig {}
 
-impl swc_css_modules::TransformConfig for TestConfig {
+impl ad_swc_css_modules::TransformConfig for TestConfig {
     fn new_name_for(&self, local: &JsWord) -> JsWord {
         format!("__local__{}", local).into()
     }

@@ -5,7 +5,7 @@ use std::{
 
 use swc_common::{comments::SingleThreadedComments, FileName, Span};
 use swc_css_ast::*;
-use swc_css_codegen::{
+use ad_swc_css_codegen::{
     writer::basic::{BasicCssWriter, BasicCssWriterConfig, IndentType, LineFeed},
     CodeGenerator, CodegenConfig, Emit,
 };

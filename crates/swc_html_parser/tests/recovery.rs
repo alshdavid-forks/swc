@@ -3,7 +3,7 @@ use std::path::PathBuf;
 use common::{document_dom_visualizer, document_span_visualizer};
 use swc_common::input::SourceFileInput;
 use swc_html_ast::Document;
-use swc_html_parser::{
+use ad_swc_html_parser::{
     lexer::Lexer,
     parser::{PResult, Parser, ParserConfig},
 };

@@ -1,10 +1,10 @@
 use std::path::{Path, PathBuf};
 
-use swc::{
+use ad_swc::{
     config::{Config, IsModule, Options},
     try_with_handler, Compiler, HandlerOpts,
 };
-use swc_common::{errors::ColorConfig, sync::Lrc, FilePathMapping, SourceMap, GLOBALS};
+use ad_swc_common::{errors::ColorConfig, sync::Lrc, FilePathMapping, SourceMap, GLOBALS};
 use testing::{NormalizedOutput, Tester};
 
 fn file(f: impl AsRef<Path>) -> NormalizedOutput {
@@ -17,7 +17,7 @@ fn file(f: impl AsRef<Path>) -> NormalizedOutput {
                 fm,
                 &handler,
                 &Options {
-                    swcrc: true,
+                    ad_swcrc: true,
                     ..Default::default()
                 },
             );
@@ -25,13 +25,13 @@ fn file(f: impl AsRef<Path>) -> NormalizedOutput {
                 return Ok(format!("{:?}", e).into());
             }
 
-            panic!("invalid swcrc should abort build, but got {:?}", s);
+            panic!("invalid ad_swcrc should abort build, but got {:?}", s);
         })
         .unwrap()
 }
 
 #[test]
-fn swcrc_simple() {
+fn ad_swcrc_simple() {
     let f = file("tests/swcrc_errors/simple/foo.js");
     println!("{}", f);
 }
@@ -63,7 +63,7 @@ fn fixture(input: PathBuf) {
                             is_module: Some(IsModule::Unknown),
                             ..Default::default()
                         },
-                        swcrc: true,
+                        ad_swcrc: true,
 
                         ..Default::default()
                     },

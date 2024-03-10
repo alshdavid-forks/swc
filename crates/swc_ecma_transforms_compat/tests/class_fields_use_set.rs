@@ -1,7 +1,7 @@
 use std::path::PathBuf;
 
 use swc_ecma_parser::Syntax;
-use swc_ecma_transforms_compat::class_fields_use_set::class_fields_use_set;
+use ad_swc_ecma_transforms_compat::class_fields_use_set::class_fields_use_set;
 use swc_ecma_transforms_testing::test_fixture;
 
 #[testing::fixture("tests/class_fields_use_set/**/input.js")]

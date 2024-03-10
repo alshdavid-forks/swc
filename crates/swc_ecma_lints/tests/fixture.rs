@@ -2,7 +2,7 @@ use std::path::PathBuf;
 
 use swc_common::{errors::HANDLER, input::SourceFileInput, Mark, SyntaxContext};
 use swc_ecma_ast::{EsVersion, Program};
-use swc_ecma_lints::{
+use ad_swc_ecma_lints::{
     config::LintConfig,
     rule::Rule,
     rules::{all, LintParams},

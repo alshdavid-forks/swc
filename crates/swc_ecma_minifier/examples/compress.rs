@@ -10,7 +10,7 @@ use std::{env::args, fs, path::Path};
 
 use swc_common::{sync::Lrc, Mark, SourceMap};
 use swc_ecma_codegen::text_writer::JsWriter;
-use swc_ecma_minifier::{
+use ad_swc_ecma_minifier::{
     optimize,
     option::{ExtraOptions, MinifyOptions},
 };

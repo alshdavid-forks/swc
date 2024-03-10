@@ -6,29 +6,29 @@ use std::{
 
 use anyhow::Context;
 use rayon::prelude::*;
-use swc::{
+use ad_swc::{
     config::{
         Config, FileMatcher, JsMinifyOptions, JscConfig, ModuleConfig, Options, Paths,
         SourceMapsConfig, TransformConfig,
     },
     try_with_handler, BoolOrDataConfig, Compiler, TransformOutput,
 };
-use swc_common::{
+use ad_swc_common::{
     chain,
     comments::{Comment, SingleThreadedComments},
     errors::{EmitterWriter, Handler, HANDLER},
     sync::Lrc,
     BytePos, FileName, Globals, SourceMap, GLOBALS,
 };
-use swc_compiler_base::PrintArgs;
-use swc_ecma_ast::{EsVersion, *};
-use swc_ecma_minifier::option::MangleOptions;
-use swc_ecma_parser::{EsConfig, Syntax, TsConfig};
-use swc_ecma_transforms::{
+use ad_swc_compiler_base::PrintArgs;
+use ad_swc_ecma_ast::{EsVersion, *};
+use ad_swc_ecma_minifier::option::MangleOptions;
+use ad_swc_ecma_parser::{EsConfig, Syntax, TsConfig};
+use ad_swc_ecma_transforms::{
     helpers::{self, Helpers},
     pass::noop,
 };
-use swc_ecma_visit::{Fold, FoldWith};
+use ad_swc_ecma_visit::{Fold, FoldWith};
 use testing::{NormalizedOutput, StdErr, Tester};
 use walkdir::WalkDir;
 
@@ -36,7 +36,7 @@ fn file(filename: &str) -> Result<NormalizedOutput, StdErr> {
     file_with_opt(
         filename,
         Options {
-            swcrc: true,
+            ad_swcrc: true,
             ..Default::default()
         },
     )
@@ -124,7 +124,7 @@ fn project(dir: &str) {
 
                 if c.read_config(
                     &Options {
-                        swcrc: true,
+                        ad_swcrc: true,
                         ..Default::default()
                     },
                     &fm.name,
@@ -139,7 +139,7 @@ fn project(dir: &str) {
                     fm,
                     &handler,
                     &Options {
-                        swcrc: true,
+                        ad_swcrc: true,
                         config: Default::default(),
                         ..Default::default()
                     },
@@ -189,7 +189,7 @@ fn par_project(dir: &str) {
                     fm,
                     &handler,
                     &Options {
-                        swcrc: true,
+                        ad_swcrc: true,
                         source_maps: Some(SourceMapsConfig::Bool(true)),
                         ..Default::default()
                     },
@@ -269,7 +269,7 @@ fn issue_409_2() {
     assert!(!s.contains("JSON.parse"));
 }
 
-/// should handle multiple entries in swcrc
+/// should handle multiple entries in ad_swcrc
 #[test]
 fn issue_414() {
     let s1 = file("tests/projects/issue-414/a.js").unwrap();
@@ -475,7 +475,7 @@ fn issue_783_core_js_2() {
     let f = file_with_opt(
         "tests/projects/issue-783/input.js",
         Options {
-            swcrc: false,
+            ad_swcrc: false,
             config: Config {
                 env: Some(swc_ecma_preset_env::Config {
                     core_js: Some("2".parse().unwrap()),
@@ -501,7 +501,7 @@ fn issue_783_core_js_3() {
     let f = file_with_opt(
         "tests/projects/issue-783/input.js",
         Options {
-            swcrc: false,
+            ad_swcrc: false,
             config: Config {
                 env: Some(swc_ecma_preset_env::Config {
                     mode: Some(swc_ecma_preset_env::Mode::Entry),
@@ -709,7 +709,7 @@ fn should_visit() {
                     None,
                     &handler,
                     &swc::config::Options {
-                        config: swc::config::Config {
+                        config: ad_swc::config::Config {
                             jsc: JscConfig {
                                 syntax: Some(Syntax::Es(EsConfig {
                                     jsx: true,
@@ -763,7 +763,7 @@ fn should_visit() {
                     comments: Some(&comments),
                     emit_source_map_columns: config.emit_source_map_columns,
                     preamble: Default::default(),
-                    codegen_config: swc_ecma_codegen::Config::default()
+                    codegen_config: ad_swc_ecma_codegen::Config::default()
                         .with_target(config.target)
                         .with_minify(config.minify),
                 },
@@ -811,7 +811,7 @@ fn tests(input_dir: PathBuf) {
                     fm,
                     &handler,
                     &Options {
-                        swcrc: true,
+                        ad_swcrc: true,
                         output_path: Some(output.join(entry.file_name())),
                         config: Config {
                             jsc: JscConfig {
@@ -953,7 +953,7 @@ fn issue_6009() {
     let files_to_exclude = ["input.spec.ts"];
 
     testing::run_test2(false, |cm, handler| {
-        let c = swc::Compiler::new(cm.clone());
+        let c = ad_swc::Compiler::new(cm.clone());
 
         let get_fm = |file_name: &str| {
             let full_path_str = format!("{}{}", "tests/projects/issue-6009/", file_name);
@@ -1095,7 +1095,7 @@ fn issue_7513_2() {
     static INPUT: &str = "export const cachedTextDecoder = { ignoreBOM: true, fatal: true };";
 
     let cm = Lrc::<SourceMap>::default();
-    let c = swc::Compiler::new(cm.clone());
+    let c = ad_swc::Compiler::new(cm.clone());
     let output = GLOBALS
         .set(&Default::default(), || {
             try_with_handler(cm.clone(), Default::default(), |handler| {

@@ -10,13 +10,13 @@ use std::{
 };
 
 use anyhow::{Context, Error};
-use swc::{
+use ad_swc::{
     config::{
         Config, InputSourceMap, IsModule, JscConfig, ModuleConfig, Options, SourceMapsConfig,
     },
     Compiler,
 };
-use swc_ecma_parser::Syntax;
+use ad_swc_ecma_parser::Syntax;
 use testing::{assert_eq, NormalizedOutput, StdErr, Tester};
 use walkdir::WalkDir;
 
@@ -36,7 +36,7 @@ fn file(f: &str, config: Config) -> Result<(), StdErr> {
                         inline_sources_content: true.into(),
                         ..config
                     },
-                    swcrc: true,
+                    ad_swcrc: true,
                     source_maps: Some(SourceMapsConfig::Bool(true)),
                     ..Default::default()
                 },
@@ -112,7 +112,7 @@ fn inline(f: &str) -> Result<(), StdErr> {
                         inline_sources_content: true.into(),
                         ..Default::default()
                     },
-                    swcrc: true,
+                    ad_swcrc: true,
                     source_maps: Some(SourceMapsConfig::Str(String::from("inline"))),
                     ..Default::default()
                 },
@@ -191,7 +191,7 @@ fn stacktrace(input_dir: PathBuf) {
                             is_module: Some(IsModule::Bool(true)),
                             ..Default::default()
                         },
-                        swcrc: true,
+                        ad_swcrc: true,
                         source_maps: Some(SourceMapsConfig::Str("inline".to_string())),
                         ..Default::default()
                     },
@@ -270,7 +270,7 @@ fn issue_4112() {
         .print_errors(|cm, handler| {
             let c = Compiler::new(cm.clone());
             let fm = cm.new_source_file(
-                swc_common::FileName::Real("./browser.js".into()),
+                ad_swc_common::FileName::Real("./browser.js".into()),
                 r#""use strict";
 
             export { default as Selection } from "./selection";
@@ -295,7 +295,7 @@ fn issue_4112() {
                 )
                 .expect("failed to process js file");
             let fm2 = cm.new_source_file(
-                swc_common::FileName::Real("./preamble.js".into()),
+                ad_swc_common::FileName::Real("./preamble.js".into()),
                 r#""use strict";
 
             import { React, window } from "easy";
@@ -340,7 +340,7 @@ fn should_work_with_emit_source_map_columns() {
     Tester::new().print_errors(|cm, handler| {
         let c = Compiler::new(cm.clone());
         let fm = cm.new_source_file(
-            swc_common::FileName::Real("./app.js".into()),
+            ad_swc_common::FileName::Real("./app.js".into()),
             r#"import { createElement } from "react";
 
   createElement('div', null, {});
@@ -354,7 +354,7 @@ fn should_work_with_emit_source_map_columns() {
             fm.clone(),
             &handler,
             &Options {
-                swcrc: false,
+                ad_swcrc: false,
                 source_maps: Some(SourceMapsConfig::Bool(true)),
                 config: Config {
                     inline_sources_content: true.into(),
@@ -408,7 +408,7 @@ fn should_work_with_emit_source_map_columns() {
             fm,
             &handler,
             &Options {
-                swcrc: false,
+                ad_swcrc: false,
                 source_maps: Some(SourceMapsConfig::Bool(true)),
                 config: Config {
                     inline_sources_content: true.into(),
@@ -459,7 +459,7 @@ fn issue_6694() {
     Tester::new().print_errors(|cm, handler| {
         let c = Compiler::new(cm.clone());
         let fm = cm.new_source_file(
-            swc_common::FileName::Real("./app.js".into()),
+            ad_swc_common::FileName::Real("./app.js".into()),
             r#"/**
  * foo
  * @param data foo
@@ -478,7 +478,7 @@ export const fixupRiskConfigData = (data: any): types.RiskConfigType => {
             fm,
             &handler,
             &Options {
-                swcrc: false,
+                ad_swcrc: false,
                 source_maps: Some(SourceMapsConfig::Bool(true)),
                 config: Config {
                     jsc: JscConfig {

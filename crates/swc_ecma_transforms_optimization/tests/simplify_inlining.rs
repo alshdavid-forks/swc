@@ -4,7 +4,7 @@ use swc_common::{chain, Mark};
 use swc_ecma_parser::{Syntax, TsConfig};
 use swc_ecma_transforms_base::resolver;
 use swc_ecma_transforms_compat::es2022::class_properties;
-use swc_ecma_transforms_optimization::simplify::inlining::inlining;
+use ad_swc_ecma_transforms_optimization::simplify::inlining::inlining;
 use swc_ecma_transforms_testing::test;
 use swc_ecma_transforms_typescript::typescript;
 use swc_ecma_visit::Fold;

@@ -6,7 +6,7 @@ use std::{
 };
 
 use swc_common::{errors::Handler, sync::Lrc, BytePos, FileName, SourceFile, SourceMap, Span};
-use swc_error_reporters::{GraphicalReportHandler, PrettyEmitter, PrettyEmitterConfig};
+use ad_swc_error_reporters::{GraphicalReportHandler, PrettyEmitter, PrettyEmitterConfig};
 
 fn main() {
     let cm = Lrc::<SourceMap>::default();

@@ -3,7 +3,7 @@ extern crate swc_malloc;
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{input::StringInput, FileName};
 use swc_html_ast::{DocumentMode, Element, Namespace};
-use swc_html_parser::{lexer::Lexer, parser::Parser};
+use ad_swc_html_parser::{lexer::Lexer, parser::Parser};
 
 fn bench_document(b: &mut Bencher, src: &'static str) {
     let _ = ::testing::run_test(false, |cm, _| {

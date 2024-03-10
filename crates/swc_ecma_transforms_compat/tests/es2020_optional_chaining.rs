@@ -3,7 +3,7 @@ use std::{fs::read_to_string, path::PathBuf};
 use swc_common::{chain, Mark};
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::{
+use ad_swc_ecma_transforms_compat::{
     es2020::{optional_chaining, optional_chaining::Config},
     es2022::class_properties,
 };
@@ -285,7 +285,7 @@ fn fixture(input: PathBuf) {
                 resolver(unresolved_mark, top_level_mark, false),
                 class_properties(
                     Some(t.comments.clone()),
-                    swc_ecma_transforms_compat::es2022::class_properties::Config {
+                    ad_swc_ecma_transforms_compat::es2022::class_properties::Config {
                         private_as_properties: false,
                         ..Default::default()
                     },
@@ -313,7 +313,7 @@ fn fixture_loose(input: PathBuf) {
                 resolver(unresolved_mark, top_level_mark, false),
                 class_properties(
                     Some(t.comments.clone()),
-                    swc_ecma_transforms_compat::es2022::class_properties::Config {
+                    ad_swc_ecma_transforms_compat::es2022::class_properties::Config {
                         private_as_properties: false,
                         pure_getter: true,
                         no_document_all: true,

@@ -7,7 +7,7 @@ use swc_common::{
     BytePos, Span,
 };
 use swc_ecma_ast::*;
-use swc_ecma_parser::{lexer::Lexer, EsConfig, Parser, Syntax, TsConfig};
+use ad_swc_ecma_parser::{lexer::Lexer, EsConfig, Parser, Syntax, TsConfig};
 use swc_ecma_visit::{Visit, VisitWith};
 use testing::{fixture, Tester};
 

@@ -9,16 +9,16 @@ use std::{fs, path::PathBuf};
 
 use swc_common::{chain, Mark};
 use swc_ecma_parser::{EsConfig, Syntax, TsConfig};
-use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::{
+use ad_swc_ecma_transforms_base::resolver;
+use ad_swc_ecma_transforms_compat::{
     class_fields_use_set::class_fields_use_set,
     es2015::{classes, function_name},
     es2022::class_properties,
 };
-use swc_ecma_transforms_module::common_js;
-use swc_ecma_transforms_proposal::{decorators, decorators::Config};
-use swc_ecma_transforms_testing::{test, test_exec, test_fixture, Tester};
-use swc_ecma_transforms_typescript::{strip, typescript};
+use ad_swc_ecma_transforms_module::common_js;
+use ad_swc_ecma_transforms_proposal::{decorators, decorators::Config};
+use ad_swc_ecma_transforms_testing::{test, test_exec, test_fixture, Tester};
+use ad_swc_ecma_transforms_typescript::{strip, typescript};
 use swc_ecma_visit::Fold;
 
 fn ts() -> Syntax {
@@ -4028,7 +4028,7 @@ test_exec!(
 fn fixture_exec(input: PathBuf) {
     let code = fs::read_to_string(input).expect("failed to read file");
 
-    swc_ecma_transforms_testing::exec_tr(
+    ad_swc_ecma_transforms_testing::exec_tr(
         "decorator",
         Syntax::Typescript(TsConfig {
             decorators: true,

@@ -2,7 +2,7 @@ extern crate swc_malloc;
 
 use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{comments::SingleThreadedComments, FileName};
-use swc_ecma_parser::{lexer::Lexer, Parser, StringInput, Syntax};
+use ad_swc_ecma_parser::{lexer::Lexer, Parser, StringInput, Syntax};
 
 fn bench_module(b: &mut Bencher, syntax: Syntax, src: &'static str) {
     let _ = ::testing::run_test(false, |cm, _| {

@@ -119,7 +119,7 @@ fn issue_6404() -> Result<(), Error> {
             let module = wasmer::Module::new(&store, raw_module_bytes).unwrap();
 
             let plugin_module =
-                swc_plugin_runner::plugin_module_bytes::CompiledPluginModuleBytes::new(
+                ad_swc_plugin_runner::plugin_module_bytes::CompiledPluginModuleBytes::new(
                     plugin_path
                         .as_os_str()
                         .to_str()
@@ -129,7 +129,7 @@ fn issue_6404() -> Result<(), Error> {
                     store,
                 );
 
-            let mut plugin_transform_executor = swc_plugin_runner::create_plugin_transform_executor(
+            let mut plugin_transform_executor = ad_swc_plugin_runner::create_plugin_transform_executor(
                 &cm,
                 &Mark::new(),
                 &Arc::new(TransformPluginMetadataContext::new(

@@ -2,7 +2,7 @@ use criterion::{black_box, criterion_group, criterion_main, Bencher, Criterion};
 use swc_common::{FileName, DUMMY_SP};
 use swc_ecma_ast::*;
 use swc_ecma_parser::{lexer::Lexer, parse_file_as_module, Parser, StringInput, Syntax};
-use swc_ecma_transforms_base::pass::noop;
+use ad_swc_ecma_transforms_base::pass::noop;
 use swc_ecma_utils::ExprFactory;
 use swc_ecma_visit::{FoldWith, Visit, VisitWith};
 

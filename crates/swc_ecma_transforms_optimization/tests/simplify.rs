@@ -7,7 +7,7 @@ use swc_ecma_parser::{Syntax, TsConfig};
 use swc_ecma_transforms_base::{helpers::inject_helpers, resolver};
 use swc_ecma_transforms_compat::{es2015, es2016, es2017, es2018, es2022::class_properties, es3};
 use swc_ecma_transforms_module::{common_js::common_js, import_analysis::import_analyzer};
-use swc_ecma_transforms_optimization::simplify::{
+use ad_swc_ecma_transforms_optimization::simplify::{
     dce::{self, dce},
     dead_branch_remover, expr_simplifier,
     inlining::{self, inlining},

@@ -51,7 +51,7 @@ fn test_full(input: PathBuf, suffix: Option<&str>) {
             panic!("parsing failed")
         }
 
-        swc_css_modules::compile(&mut ss, TestConfig {});
+        ad_swc_css_modules::compile(&mut ss, TestConfig {});
         ss.visit_mut_with(&mut Compiler::new(Config {
             process: Features::NESTING,
         }));
@@ -79,7 +79,7 @@ fn test_without_env(input: PathBuf) {
 
 struct TestConfig {}
 
-impl swc_css_modules::TransformConfig for TestConfig {
+impl ad_swc_css_modules::TransformConfig for TestConfig {
     fn new_name_for(&self, local: &JsWord) -> JsWord {
         format!("__local__{}", local).into()
     }

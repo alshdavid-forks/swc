@@ -8,7 +8,7 @@ use anyhow::Result;
 use rayon::prelude::*;
 use swc_common::{errors::HANDLER, sync::Lrc, Mark, SourceMap, GLOBALS};
 use swc_ecma_codegen::text_writer::JsWriter;
-use swc_ecma_minifier::{
+use ad_swc_ecma_minifier::{
     optimize,
     option::{ExtraOptions, MangleOptions, MinifyOptions},
 };

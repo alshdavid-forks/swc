@@ -1,7 +1,7 @@
 use swc_common::{chain, Mark};
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::es2015::{function_name, object_super, shorthand};
+use ad_swc_ecma_transforms_compat::es2015::{function_name, object_super, shorthand};
 use swc_ecma_transforms_testing::test;
 use swc_ecma_visit::Fold;
 

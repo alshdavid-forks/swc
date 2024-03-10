@@ -87,7 +87,7 @@ static PLUGIN_BYTES: Lazy<swc_plugin_runner::plugin_module_bytes::CompiledPlugin
         let store = wasmer::Store::default();
         let module = wasmer::Module::new(&store, raw_module_bytes).unwrap();
 
-        swc_plugin_runner::plugin_module_bytes::CompiledPluginModuleBytes::new(
+        ad_swc_plugin_runner::plugin_module_bytes::CompiledPluginModuleBytes::new(
             path.as_os_str()
                 .to_str()
                 .expect("Should able to get path")
@@ -129,7 +129,7 @@ fn internal() {
             .into_iter()
             .collect();
 
-            let mut plugin_transform_executor = swc_plugin_runner::create_plugin_transform_executor(
+            let mut plugin_transform_executor = ad_swc_plugin_runner::create_plugin_transform_executor(
                 &cm,
                 &Mark::new(),
                 &Arc::new(TransformPluginMetadataContext::new(
@@ -197,7 +197,7 @@ fn internal() {
 
             let _res = HANDLER.set(&handler, || {
                 let mut plugin_transform_executor =
-                    swc_plugin_runner::create_plugin_transform_executor(
+                    ad_swc_plugin_runner::create_plugin_transform_executor(
                         &cm,
                         &Mark::new(),
                         &Arc::new(TransformPluginMetadataContext::new(
@@ -246,7 +246,7 @@ fn internal() {
             .into_iter()
             .collect();
 
-            let mut plugin_transform_executor = swc_plugin_runner::create_plugin_transform_executor(
+            let mut plugin_transform_executor = ad_swc_plugin_runner::create_plugin_transform_executor(
                 &cm,
                 &Mark::new(),
                 &Arc::new(TransformPluginMetadataContext::new(
@@ -264,7 +264,7 @@ fn internal() {
                 .expect("Plugin should apply transform");
 
             // TODO: we'll need to apply 2 different plugins
-            let mut plugin_transform_executor = swc_plugin_runner::create_plugin_transform_executor(
+            let mut plugin_transform_executor = ad_swc_plugin_runner::create_plugin_transform_executor(
                 &cm,
                 &Mark::new(),
                 &Arc::new(TransformPluginMetadataContext::new(

@@ -7,14 +7,14 @@
 
 use swc_common::{chain, Mark};
 use swc_ecma_parser::Syntax;
-use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::{
+use ad_swc_ecma_transforms_base::resolver;
+use ad_swc_ecma_transforms_compat::{
     es2015::{arrow, block_scoping, classes, function_name, shorthand},
     es2022::class_properties,
 };
-use swc_ecma_transforms_module::common_js::common_js;
-use swc_ecma_transforms_proposal::decorators;
-use swc_ecma_transforms_testing::test;
+use ad_swc_ecma_transforms_module::common_js::common_js;
+use ad_swc_ecma_transforms_proposal::decorators;
+use ad_swc_ecma_transforms_testing::test;
 use swc_ecma_visit::Fold;
 
 fn syntax() -> Syntax {

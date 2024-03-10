@@ -7,7 +7,7 @@ use swc_common::{
 };
 use swc_ecma_parser::Syntax;
 use swc_ecma_transforms_base::resolver;
-use swc_ecma_transforms_compat::{
+use ad_swc_ecma_transforms_compat::{
     es2015, es2015::generator::generator, es2016, es2017, es2017::async_to_generator, es2018,
     es2021, es2022,
 };

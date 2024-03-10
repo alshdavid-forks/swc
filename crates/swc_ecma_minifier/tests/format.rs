@@ -4,7 +4,7 @@ use swc_ecma_codegen::{
     text_writer::{omit_trailing_semi, JsWriter, WriteJs},
     Config, Emitter,
 };
-use swc_ecma_minifier::{optimize, option::ExtraOptions};
+use ad_swc_ecma_minifier::{optimize, option::ExtraOptions};
 use swc_ecma_parser::{parse_file_as_module, Syntax};
 use testing::NormalizedOutput;
 

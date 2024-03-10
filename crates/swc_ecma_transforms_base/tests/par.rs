@@ -1,5 +1,5 @@
 use swc_ecma_ast::*;
-use swc_ecma_transforms_base::perf::Parallel;
+use ad_swc_ecma_transforms_base::perf::Parallel;
 use swc_ecma_transforms_macros::parallel;
 use swc_ecma_visit::{Fold, VisitMut};
 

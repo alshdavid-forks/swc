@@ -17,7 +17,7 @@ use swc_common::{
     FileName, FilePathMapping, SourceMap, GLOBALS,
 };
 use swc_ecma_parser::{EsConfig, Syntax};
-use swc_estree_compat::babelify::{Babelify, Context};
+use ad_swc_estree_compat::babelify::{Babelify, Context};
 use test::{test_main, DynTestFn, ShouldPanic, TestDesc, TestDescAndFn, TestName, TestType};
 use testing::{json::diff_json_value, DebugUsingDisplay};
 use walkdir::WalkDir;

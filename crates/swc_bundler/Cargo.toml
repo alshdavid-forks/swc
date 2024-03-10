@@ -1,73 +1,153 @@
+
 [package]
 authors = ["강동윤 <kdy1997.dev@gmail.com>"]
-# OUT_DIR is required for testing
-build         = "build.rs"
-description   = "Very fast ecmascript bundler"
+build = "build.rs"
+description = "Very fast ecmascript bundler"
 documentation = "https://rustdoc.swc.rs/swc_bundler/"
-edition       = "2021"
-include       = ["Cargo.toml", "build.rs", "src/**/*.rs", "src/**/*.js"]
-license       = "Apache-2.0"
-name          = "swc_bundler"
-repository    = "https://github.com/swc-project/swc.git"
-version       = "0.225.13"
+edition = "2021"
+include = ["Cargo.toml","build.rs","src/**/*.rs","src/**/*.js"]
+license = "Apache-2.0"
+name = "ad_swc_bundler"
+repository = "https://github.com/swc-project/swc.git"
+version = "1.0.0"
+_name = "swc_bundler"
 
-  [package.metadata.docs.rs]
-  all-features = true
-  rustdoc-args = ["--cfg", "docsrs"]
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg","docsrs"]
 
 [lib]
 bench = false
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 [features]
-concurrent = ["swc_common/concurrent", "dashmap", "rayon", "indexmap/rayon"]
-default    = []
+concurrent = ["swc_common/concurrent","dashmap","rayon","indexmap/rayon"]
+default = []
 
 [dependencies]
-anyhow        = "1"
-crc           = "2.1.0"
-dashmap       = { version = "5.4.0", optional = true }
-indexmap      = "2.0.0"
-is-macro      = "0.3.0"
-once_cell     = "1.18.0"
-parking_lot   = "0.12.1"
-petgraph      = "0.6"
-radix_fmt     = "1"
-rayon         = { version = "1", optional = true }
+anyhow = "1"
+crc = "2.1.0"
+indexmap = "2.0.0"
+is-macro = "0.3.0"
+once_cell = "1.18.0"
+parking_lot = "0.12.1"
+petgraph = "0.6"
+radix_fmt = "1"
 relative-path = "1.2"
-tracing       = "0.1.37"
+tracing = "0.1.37"
 
-swc_atoms                        = { version = "0.6.5", path = "../swc_atoms" }
-swc_common                       = { version = "0.33.19", path = "../swc_common" }
-swc_ecma_ast                     = { version = "0.112.5", path = "../swc_ecma_ast" }
-swc_ecma_codegen                 = { version = "0.148.10", path = "../swc_ecma_codegen" }
-swc_ecma_loader                  = { version = "0.45.21", path = "../swc_ecma_loader" }
-swc_ecma_parser                  = { version = "0.143.8", path = "../swc_ecma_parser" }
-swc_ecma_transforms_base         = { version = "0.137.13", path = "../swc_ecma_transforms_base" }
-swc_ecma_transforms_optimization = { version = "0.198.13", path = "../swc_ecma_transforms_optimization" }
-swc_ecma_utils                   = { version = "0.127.10", path = "../swc_ecma_utils" }
-swc_ecma_visit                   = { version = "0.98.6", path = "../swc_ecma_visit" }
-swc_fast_graph                   = { version = "0.21.19", path = "../swc_fast_graph/" }
-swc_graph_analyzer               = { version = "0.22.21", path = "../swc_graph_analyzer/" }
+[dependencies.dashmap]
+version = "5.4.0"
+optional = true
+
+[dependencies.rayon]
+version = "1"
+optional = true
+
+[dependencies.swc_atoms]
+version = "1.0.0"
+path = "../swc_atoms"
+package = "ad_swc_atoms"
+
+[dependencies.swc_common]
+version = "1.0.0"
+path = "../swc_common"
+package = "ad_swc_common"
+
+[dependencies.swc_ecma_ast]
+version = "1.0.0"
+path = "../swc_ecma_ast"
+package = "ad_swc_ecma_ast"
+
+[dependencies.swc_ecma_codegen]
+version = "1.0.0"
+path = "../swc_ecma_codegen"
+package = "ad_swc_ecma_codegen"
+
+[dependencies.swc_ecma_loader]
+version = "1.0.0"
+path = "../swc_ecma_loader"
+package = "ad_swc_ecma_loader"
+
+[dependencies.swc_ecma_parser]
+version = "1.0.0"
+path = "../swc_ecma_parser"
+package = "ad_swc_ecma_parser"
+
+[dependencies.swc_ecma_transforms_base]
+version = "1.0.0"
+path = "../swc_ecma_transforms_base"
+package = "ad_swc_ecma_transforms_base"
+
+[dependencies.swc_ecma_transforms_optimization]
+version = "1.0.0"
+path = "../swc_ecma_transforms_optimization"
+package = "ad_swc_ecma_transforms_optimization"
+
+[dependencies.swc_ecma_utils]
+version = "1.0.0"
+path = "../swc_ecma_utils"
+package = "ad_swc_ecma_utils"
+
+[dependencies.swc_ecma_visit]
+version = "1.0.0"
+path = "../swc_ecma_visit"
+package = "ad_swc_ecma_visit"
+
+[dependencies.swc_fast_graph]
+version = "1.0.0"
+path = "../swc_fast_graph/"
+package = "ad_swc_fast_graph"
+
+[dependencies.swc_graph_analyzer]
+version = "1.0.0"
+path = "../swc_graph_analyzer/"
+package = "ad_swc_graph_analyzer"
 
 [dev-dependencies]
-hex        = "0.4"
-ntest      = "0.7.2"
+hex = "0.4"
+ntest = "0.7.2"
 path-clean = "=0.1.0"
-reqwest    = { version = "0.11.14", features = ["blocking"] }
-sha-1      = "0.10"
-tempfile   = "3.6.0"
-url        = "2.4.0"
+sha-1 = "0.10"
+tempfile = "3.6.0"
+url = "2.4.0"
 
-swc_ecma_loader = { version = "0.45.21", path = "../swc_ecma_loader", features = [
-  "node",
-  "cache",
-] }
-swc_ecma_minifier = { version = "0.192.14", path = "../swc_ecma_minifier", features = [
-  "concurrent",
-] }
-swc_ecma_transforms_proposal = { version = "0.171.13", path = "../swc_ecma_transforms_proposal" }
-swc_ecma_transforms_react = { version = "0.183.13", path = "../swc_ecma_transforms_react" }
-swc_ecma_transforms_typescript = { version = "0.188.13", path = "../swc_ecma_transforms_typescript" }
-swc_malloc = { version = "0.5.10", path = "../swc_malloc" }
-testing = { version = "0.35.20", path = "../testing" }
+[dev-dependencies.reqwest]
+version = "0.11.14"
+features = ["blocking"]
+
+[dev-dependencies.swc_ecma_loader]
+version = "1.0.0"
+path = "../swc_ecma_loader"
+features = ["node","cache"]
+package = "ad_swc_ecma_loader"
+
+[dev-dependencies.swc_ecma_minifier]
+version = "1.0.0"
+path = "../swc_ecma_minifier"
+features = ["concurrent"]
+package = "ad_swc_ecma_minifier"
+
+[dev-dependencies.swc_ecma_transforms_proposal]
+version = "1.0.0"
+path = "../swc_ecma_transforms_proposal"
+package = "ad_swc_ecma_transforms_proposal"
+
+[dev-dependencies.swc_ecma_transforms_react]
+version = "1.0.0"
+path = "../swc_ecma_transforms_react"
+package = "ad_swc_ecma_transforms_react"
+
+[dev-dependencies.swc_ecma_transforms_typescript]
+version = "1.0.0"
+path = "../swc_ecma_transforms_typescript"
+package = "ad_swc_ecma_transforms_typescript"
+
+[dev-dependencies.swc_malloc]
+version = "1.0.0"
+path = "../swc_malloc"
+package = "ad_swc_malloc"
+
+[dev-dependencies.testing]
+version = "1.0.0"
+path = "../testing"
+package = "ad_testing"
